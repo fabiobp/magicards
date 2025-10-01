@@ -41,10 +41,36 @@
             padding-top: 20px;
             border-top: 1px solid #eee;
         }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="language-selector">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en-us">English</option>
+                <option value="pt-br" selected>Português</option>
+            </select>
+        </div>
+
         <h1>Termos de Uso para Magi Cards</h1>
         
         <p><strong>Data de Vigência:</strong> 1 de Outubro de 2025</p>
