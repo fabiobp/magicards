@@ -144,5 +144,21 @@
             <p>Bibiu Games</p>
         </div>
     </div>
+
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+            
+            // Get current full path
+            let currentPath = window.location.href;
+            
+            // Replace language code in the path
+            const newPath = currentPath.replace(/\/(en-us|pt-br)\//, '/' + selectedLang + '/');
+            
+            // Navigate to new path
+            window.location.href = newPath;
+        }
+    </script>
 </body>
 </html>
