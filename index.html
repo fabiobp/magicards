@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibiu GAMES - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 25%, #fef3c7 50%, #e9d5ff 75%, #dbeafe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 40px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 25s;
+        }
+
+        .cloud1:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud1:after {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            right: 10px;
+        }
+
+        .cloud2 {
+            width: 120px;
+            height: 50px;
+            top: 60%;
+            right: 15%;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        .cloud2:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud2:after {
+            width: 70px;
+            height: 70px;
+            top: -35px;
+            right: 15px;
+        }
+
+        .cloud3 {
+            width: 80px;
+            height: 35px;
+            bottom: 15%;
+            left: 20%;
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        .cloud3:before {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: 10px;
+        }
+
+        .cloud3:after {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            right: 10px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            33% { transform: translateY(-20px) translateX(10px); }
+            66% { transform: translateY(10px) translateX(-10px); }
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            color: #fef3c7;
+            font-size: 20px;
+            animation: twinkle 2s infinite;
+        }
+
+        .star:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 25%; right: 30%; animation-delay: 0.5s; }
+        .star:nth-child(3) { top: 45%; left: 15%; animation-delay: 1s; }
+        .star:nth-child(4) { top: 55%; right: 20%; animation-delay: 1.5s; }
+        .star:nth-child(5) { top: 75%; left: 30%; animation-delay: 0.3s; }
+        .star:nth-child(6) { top: 35%; right: 15%; animation-delay: 0.8s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo-text {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #f472b6 25%, #a78bfa 50%, #60a5fa 75%, #fbbf24 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 3s ease infinite;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #8b5a3c;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: -10px;
+        }
+
+        .wip-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: #6366f1;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .message {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .message h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .message p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #8b5cf6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Game controller decoration */
+        .controller {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .controller:nth-child(1) {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .controller:nth-child(2) {
+            bottom: 10%;
+            left: 10%;
+            animation-delay: -7s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 3rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                padding: 20px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <!-- Twinkling stars -->
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+
+    <!-- Game controller decorations -->
+    <div class="controller">🎮</div>
+    <div class="controller">🎮</div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="wip-badge">🚧 WORK IN PROGRESS 🚧</div>
+            <h1 class="logo-text">Bibiu</h1>
+            <p class="logo-subtitle">GAMES</p>
+        </div>
+
+        <div class="message">
+            <h2>Something Amazing is Coming!</h2>
+            <p>We're crafting magical gaming experiences that will bring joy and wonder to players everywhere.</p>
+            <p>Our team is hard at work building something special. Stay tuned for updates!</p>
+        </div>
+
+        <div class="contact-info">
+            <p style="margin-bottom: 10px; color: #4b5563; font-weight: 600;">Get in Touch</p>
+            <p style="margin: 0;">
+                <a href="mailto:contact@bibiugames.com">contact@bibiugames.com</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
