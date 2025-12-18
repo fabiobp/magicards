@@ -164,9 +164,43 @@
             animation: logoFloat 3s ease-in-out infinite;
         }
 
+        .logo-image:not([src]),
+        .logo-image[src=""],
+        .logo-image[src*="undefined"] {
+            display: none;
+        }
+
         @keyframes logoFloat {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
+        }
+
+        .logo-text {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #f472b6 25%, #a78bfa 50%, #60a5fa 75%, #fbbf24 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 3s ease infinite;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #8b5a3c;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: -10px;
         }
 
         .wip-badge {
@@ -292,7 +326,11 @@
     <div class="container">
         <div class="logo-container">
             <div class="wip-badge">🚧 WORK IN PROGRESS 🚧</div>
-            <img src="logo.png" alt="Bibiu GAMES Logo" class="logo-image">
+            <img src="magicards/Bibiu Logo.png" alt="Bibiu GAMES Logo" class="logo-image" onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='block';">
+            <div class="logo-fallback" style="display: none;">
+                <h1 class="logo-text">Bibiu</h1>
+                <p class="logo-subtitle">GAMES</p>
+            </div>
         </div>
 
         <div class="message">
