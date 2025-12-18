@@ -155,33 +155,18 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .logo-text {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #60a5fa 0%, #f472b6 25%, #a78bfa 50%, #60a5fa 75%, #fbbf24 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 3s ease infinite;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        .logo-image {
+            max-width: min(90vw, 500px);
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.15));
+            animation: logoFloat 3s ease-in-out infinite;
         }
 
-        @keyframes gradientText {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .logo-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: #8b5a3c;
-            font-style: italic;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-top: -10px;
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .wip-badge {
@@ -276,12 +261,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .logo-text {
-                font-size: 3rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 1.2rem;
+            .logo-image {
+                max-width: 85vw;
             }
 
             .contact-info {
@@ -311,8 +292,7 @@
     <div class="container">
         <div class="logo-container">
             <div class="wip-badge">🚧 WORK IN PROGRESS 🚧</div>
-            <h1 class="logo-text">Bibiu</h1>
-            <p class="logo-subtitle">GAMES</p>
+            <img src="logo.png" alt="Bibiu GAMES Logo" class="logo-image">
         </div>
 
         <div class="message">
