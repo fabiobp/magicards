@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Founder - Bibiu GAMES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 25%, #fef3c7 50%, #e9d5ff 75%, #dbeafe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated clouds */
+        .cloud {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: float 20s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 40px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 25s;
+        }
+
+        .cloud1:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud1:after {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            right: 10px;
+        }
+
+        .cloud2 {
+            width: 120px;
+            height: 50px;
+            top: 60%;
+            right: 15%;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        .cloud2:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud2:after {
+            width: 70px;
+            height: 70px;
+            top: -35px;
+            right: 15px;
+        }
+
+        .cloud3 {
+            width: 80px;
+            height: 35px;
+            bottom: 15%;
+            left: 20%;
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        .cloud3:before {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: 10px;
+        }
+
+        .cloud3:after {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            right: 10px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            33% { transform: translateY(-20px) translateX(10px); }
+            66% { transform: translateY(10px) translateX(-10px); }
+        }
+
+        /* Stars */
+        .star {
+            position: fixed;
+            color: #fef3c7;
+            font-size: 20px;
+            animation: twinkle 2s infinite;
+            z-index: 1;
+        }
+
+        .star:nth-child(4) { top: 15%; left: 25%; animation-delay: 0s; }
+        .star:nth-child(5) { top: 25%; right: 30%; animation-delay: 0.5s; }
+        .star:nth-child(6) { top: 45%; left: 15%; animation-delay: 1s; }
+        .star:nth-child(7) { top: 55%; right: 20%; animation-delay: 1.5s; }
+        .star:nth-child(8) { top: 75%; left: 30%; animation-delay: 0.3s; }
+        .star:nth-child(9) { top: 35%; right: 15%; animation-delay: 0.8s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .header-nav a:hover,
+        .header-nav a.active {
+            color: #6366f1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 20px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .page-title h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #4b5563;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #6b7280;
+            font-size: 1.2rem;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            max-width: 900px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .founder-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .founder-photo-container {
+            flex-shrink: 0;
+        }
+
+        .founder-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #6366f1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .founder-name {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #4b5563;
+        }
+
+        .founder-title {
+            text-align: center;
+            color: #6366f1;
+            font-weight: 600;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .founder-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .founder-bio {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .founder-highlights {
+            display: grid;
+            gap: 15px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 18px;
+            background: linear-gradient(135deg, #f3f4f6, #fefce8);
+            border-radius: 12px;
+            border-left: 4px solid #6366f1;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateX(5px);
+        }
+
+        .highlight-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .certifications {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .certifications h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Game controller decoration */
+        .controller {
+            position: fixed;
+            font-size: 40px;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .controller:nth-child(1) {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .controller:nth-child(2) {
+            bottom: 10%;
+            left: 10%;
+            animation-delay: -7s;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 20px;
+            }
+
+            .header-nav {
+                gap: 15px;
+            }
+
+            .header-nav a {
+                font-size: 0.9rem;
+            }
+
+            .founder-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .founder-info {
+                min-width: 100%;
+            }
+
+            .highlight-item {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <!-- Twinkling stars -->
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+
+    <!-- Game controller decorations -->
+    <div class="controller">&#127918;</div>
+    <div class="controller">&#127918;</div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <a href="index.html" class="header-logo">Bibiu GAMES</a>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="founder.html" class="active">Meet the Founder</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>Meet the Founder</h1>
+            <p>The visionary behind Bibiu GAMES</p>
+        </div>
+
+        <div class="founder-section">
+            <div class="founder-content">
+                <div class="founder-photo-container">
+                    <img src="magicards/founder.png" alt="Fabio Bruno Pereira" class="founder-photo">
+                    <div class="founder-name">Fabio Bruno Pereira</div>
+                    <div class="founder-title">Founder & CEO</div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/fabio-bruno-pereira/" target="_blank" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="founder-info">
+                    <p class="founder-bio">
+                        With over 18 years of experience in IT working for multinational and start-up companies, 
+                        and more than 10 years dedicated to game development producing indie games, 
+                        Fabio combines deep technical expertise with a true passion for creating exceptional gaming experiences. 
+                        His leadership style focuses on hands-on involvement while maintaining strategic vision.
+                    </p>
+                    <div class="founder-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">&#127918;</span>
+                            <span class="highlight-text">10+ years of experience in game development, creating and producing indie games with passion and dedication</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">&#128187;</span>
+                            <span class="highlight-text">Expert in managing high-performance IT teams, with proven capacity to develop products and services with exponential revenue growth</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">&#128202;</span>
+                            <span class="highlight-text">Methodology-driven professional experienced in BPMN, ITIL, Cobit, Waterfall, Kanban, Scrum, and PMI</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">&#128274;</span>
+                            <span class="highlight-text">2+ years in IT Security, internal controls, and IT auditing with hands-on vulnerability analysis and pen testing experience</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">&#127919;</span>
+                            <span class="highlight-text">Deep business understanding and customer value perception - always focused on delivering the right solution</span>
+                        </div>
+                    </div>
+                    <div class="certifications">
+                        <h4>&#127942; Certifications</h4>
+                        <div class="cert-list">
+                            <span class="cert-badge">Scrum Master</span>
+                            <span class="cert-badge">ITIL Foundation V3</span>
+                            <span class="cert-badge">ISO 20000</span>
+                            <span class="cert-badge">Cobit Foundation</span>
+                            <span class="cert-badge">MIT Design Thinking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">&#8592; Back to Home</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Bibiu GAMES. All rights reserved.</p>
+    </div>
+</body>
+</html>

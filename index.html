@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibiu GAMES - Coming Soon</title>
+    <title>Bibiu GAMES - MagiCards Coming Soon</title>
     <style>
         * {
             margin: 0;
@@ -29,11 +29,12 @@
 
         /* Animated clouds */
         .cloud {
-            position: absolute;
+            position: fixed;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 50px;
             opacity: 0.8;
             animation: float 20s infinite ease-in-out;
+            z-index: 1;
         }
 
         .cloud:before,
@@ -120,18 +121,19 @@
 
         /* Stars */
         .star {
-            position: absolute;
+            position: fixed;
             color: #fef3c7;
             font-size: 20px;
             animation: twinkle 2s infinite;
+            z-index: 1;
         }
 
-        .star:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
-        .star:nth-child(2) { top: 25%; right: 30%; animation-delay: 0.5s; }
-        .star:nth-child(3) { top: 45%; left: 15%; animation-delay: 1s; }
-        .star:nth-child(4) { top: 55%; right: 20%; animation-delay: 1.5s; }
-        .star:nth-child(5) { top: 75%; left: 30%; animation-delay: 0.3s; }
-        .star:nth-child(6) { top: 35%; right: 15%; animation-delay: 0.8s; }
+        .star:nth-child(4) { top: 15%; left: 25%; animation-delay: 0s; }
+        .star:nth-child(5) { top: 25%; right: 30%; animation-delay: 0.5s; }
+        .star:nth-child(6) { top: 45%; left: 15%; animation-delay: 1s; }
+        .star:nth-child(7) { top: 55%; right: 20%; animation-delay: 1.5s; }
+        .star:nth-child(8) { top: 75%; left: 30%; animation-delay: 0.3s; }
+        .star:nth-child(9) { top: 35%; right: 15%; animation-delay: 0.8s; }
 
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
@@ -142,9 +144,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
+            padding: 100px 20px 40px;
             position: relative;
             z-index: 10;
         }
@@ -203,22 +203,66 @@
             margin-top: -10px;
         }
 
-        .wip-badge {
-            display: inline-block;
+        /* Countdown Section */
+        .countdown-section {
             background: rgba(255, 255, 255, 0.9);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: #6366f1;
-            font-weight: 600;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            animation: pulse 2s infinite;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 700px;
+            width: 90%;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .countdown-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: #4b5563;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .countdown-game {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+            min-width: 100px;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .countdown-number {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-top: 5px;
         }
 
         .message {
@@ -242,23 +286,248 @@
             margin-bottom: 15px;
         }
 
-        .contact-info {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 25px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-out 0.6s both;
+        /* Founder Section */
+        .founder-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            max-width: 900px;
+            width: 90%;
             backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        .contact-info a {
+        .founder-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .founder-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #4b5563;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .founder-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        .founder-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .founder-photo-container {
+            flex-shrink: 0;
+        }
+
+        .founder-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #6366f1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .founder-name {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #4b5563;
+        }
+
+        .founder-title {
+            text-align: center;
+            color: #6366f1;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .founder-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .founder-bio {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .founder-highlights {
+            display: grid;
+            gap: 15px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f3f4f6, #fefce8);
+            border-radius: 12px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .highlight-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .certifications {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .certifications h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #4b5563;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 15px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .contact-email {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+        }
+
+        .contact-email a {
             color: #6366f1;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .contact-info a:hover {
+        .contact-email a:hover {
             color: #8b5cf6;
         }
 
@@ -275,10 +544,11 @@
 
         /* Game controller decoration */
         .controller {
-            position: absolute;
+            position: fixed;
             font-size: 40px;
             opacity: 0.3;
             animation: float 15s infinite ease-in-out;
+            z-index: 1;
         }
 
         .controller:nth-child(1) {
@@ -293,14 +563,87 @@
             animation-delay: -7s;
         }
 
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .header-nav a:hover {
+            color: #6366f1;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 12px 20px;
+            }
+
+            .header-nav {
+                gap: 15px;
+            }
+
+            .header-nav a {
+                font-size: 0.9rem;
+            }
+
             .logo-image {
                 max-width: 85vw;
             }
 
-            .contact-info {
-                padding: 20px 25px;
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px 18px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -312,20 +655,29 @@
     <div class="cloud cloud3"></div>
 
     <!-- Twinkling stars -->
-    <div class="star">✦</div>
-    <div class="star">✦</div>
-    <div class="star">✦</div>
-    <div class="star">✦</div>
-    <div class="star">✦</div>
-    <div class="star">✦</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
+    <div class="star">&#10022;</div>
 
     <!-- Game controller decorations -->
-    <div class="controller">🎮</div>
-    <div class="controller">🎮</div>
+    <div class="controller">&#127918;</div>
+    <div class="controller">&#127918;</div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <a href="index.html" class="header-logo">Bibiu GAMES</a>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="founder.html">Meet the Founder</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="logo-container">
-            <div class="wip-badge">🚧 WORK IN PROGRESS 🚧</div>
             <img src="magicards/Bibiu Logo.png" alt="Bibiu GAMES Logo" class="logo-image" onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='block';">
             <div class="logo-fallback" style="display: none;">
                 <h1 class="logo-text">Bibiu</h1>
@@ -333,19 +685,101 @@
             </div>
         </div>
 
-        <div class="message">
-            <h2>Something Amazing is Coming!</h2>
-            <p>We're crafting magical gaming experiences that will bring joy and wonder to players everywhere.</p>
-            <p>Our team is hard at work building something special. Stay tuned for updates!</p>
+        <!-- Countdown Section -->
+        <div class="countdown-section">
+            <h2 class="countdown-title">Coming Soon</h2>
+            <div class="countdown-game">MagiCards Game</div>
+            <div class="countdown-timer" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">180</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
         </div>
 
-        <div class="contact-info">
-            <p style="margin-bottom: 10px; color: #4b5563; font-weight: 600;">Get in Touch</p>
-            <p style="margin: 0;">
-                <a href="mailto:contact@bibiugames.com">contact@bibiugames.com</a>
-            </p>
+        <div class="message">
+            <h2>Something Magical is Coming!</h2>
+            <p>We're crafting magical gaming experiences that will bring joy and wonder to players everywhere.</p>
+            <p>Get ready for MagiCards - a game that will transform how you play!</p>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="contact-section" id="contact">
+            <h2>Get in Touch</h2>
+            <p class="contact-subtitle">Have questions? Want to collaborate? We'd love to hear from you!</p>
+            <form class="contact-form" action="https://formsubmit.co/contact@bibiugames.com" method="POST">
+                <input type="hidden" name="_subject" value="New contact from Bibiu GAMES website">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div class="contact-email">
+                <p>Or email us directly at <a href="mailto:contact@bibiugames.com">contact@bibiugames.com</a></p>
+            </div>
         </div>
     </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Bibiu GAMES. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Fixed release date: July 29, 2026 (180 days from January 30, 2026)
+        const releaseDate = new Date('2026-07-29T00:00:00');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = releaseDate.getTime() - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
-
