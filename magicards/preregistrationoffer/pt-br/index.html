@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta de Pré-Registro - Magi Cards</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #111;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        strong {
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en-us">English</option>
+                <option value="pt-br" selected>Português</option>
+            </select>
+        </div>
+
+        <h1>Oferta de Pré-Registro do Magi Cards</h1>
+
+        <p><strong>Data de Vigência:</strong> 15 de agosto de 2026</p>
+
+        <p>Estes Termos da Oferta regem a oferta de pré-registro (a "Oferta") do jogo Magi Cards (o "Jogo"), operado pela Bibiu Games ("nós"). A Oferta faz parte dos <strong>Termos de Uso</strong> e da <strong>Política de Privacidade</strong> do Jogo; ao participar, você concorda com todos eles.</p>
+
+        <h2>1. A Oferta</h2>
+        <p>Os jogadores que realizarem o pré-registro do Jogo na página oficial da loja (Google Play) antes do lançamento oficial do Jogo (o "Lançamento Oficial") receberão uma recompensa especial de pré-registro (a "Recompensa").</p>
+
+        <h2>2. Elegibilidade</h2>
+        <ul>
+            <li>Realizar o pré-registro pela página oficial do Jogo na loja antes do Lançamento Oficial.</li>
+            <li>Atender ao requisito de idade mínima previsto nos Termos de Uso (13 anos ou mais).</li>
+            <li>Limite de uma Recompensa por jogador e por conta de jogo.</li>
+        </ul>
+
+        <h2>3. Entrega da Recompensa</h2>
+        <p>A Recompensa será entregue na sua <strong>caixa de correio dentro do Jogo</strong> em <strong>até 3 (três) dias após o Lançamento Oficial</strong> do Jogo.</p>
+        <p>Para receber a Recompensa, você deve:</p>
+        <ul>
+            <li>Baixar e instalar o Jogo no seu dispositivo;</li>
+            <li>Abrir e jogar o Jogo com a sua conta de jogo;</li>
+            <li>Aceitar os Termos de Uso e a Política de Privacidade do Jogo.</li>
+        </ul>
+        <p>A Recompensa é vinculada à conta de jogo utilizada ao jogar o Jogo pela primeira vez e é resgatada pela caixa de correio dentro do Jogo.</p>
+
+        <h2>4. Condições da Recompensa</h2>
+        <ul>
+            <li>A Recompensa é um Item Virtual conforme definido nos Termos de Uso: é licenciada, não vendida, não possui valor real ou em dinheiro e não pode ser trocada, reembolsada ou transferida para outros jogadores ou contas.</li>
+            <li>Podemos substituir o conteúdo da Recompensa por um item de valor igual ou maior dentro do Jogo, se necessário por motivos de balanceamento ou técnicos.</li>
+            <li>A Recompensa não será duplicada nem concedida novamente se a conta for excluída, redefinida ou perdida por ação do jogador.</li>
+        </ul>
+
+        <h2>5. Alterações, Suspensão ou Cancelamento</h2>
+        <p>Reservamo-nos o direito de modificar, suspender ou cancelar a Oferta a qualquer momento, incluindo o conteúdo da Recompensa e estes Termos da Oferta. Qualquer alteração relevante será publicada nesta página antes de entrar em vigor. Se a Oferta for cancelada antes do Lançamento Oficial, nenhuma Recompensa será devida.</p>
+
+        <h2>6. Abuso e Fraude</h2>
+        <p>Podemos desqualificar da Oferta qualquer jogador que utilizar múltiplas contas, automação, emuladores, exploits ou qualquer meio fraudulento para obter múltiplas Recompensas, e podemos revogar Recompensas concedidas em violação a estes Termos da Oferta.</p>
+
+        <div class="footer">
+            <h2>7. Fale Conosco</h2>
+            <p>Se você tiver dúvidas sobre esta Oferta, entre em contato pelo e-mail <strong>contact@bibiugames.com</strong>.</p>
+            <p>Bibiu Games</p>
+            <p><em>Última atualização: 15 de agosto de 2026</em></p>
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+
+            // Get current full path
+            let currentPath = window.location.href;
+
+            // Replace language code in the path
+            const newPath = currentPath.replace(/\/(en-us|pt-br)\//, '/' + selectedLang + '/');
+
+            // Navigate to new path
+            window.location.href = newPath;
+        }
+    </script>
+</body>
+</html>

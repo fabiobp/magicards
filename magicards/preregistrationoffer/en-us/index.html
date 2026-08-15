@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Registration Offer - Magi Cards</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #111;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        strong {
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en-us" selected>English</option>
+                <option value="pt-br">Português</option>
+            </select>
+        </div>
+
+        <h1>Magi Cards Pre-Registration Offer</h1>
+
+        <p><strong>Effective Date:</strong> August 15, 2026</p>
+
+        <p>These Offer Terms govern the pre-registration offer (the "Offer") for the game Magi Cards (the "Game"), operated by Bibiu Games ("we", "us"). The Offer is part of the Game's <strong>Terms of Use</strong> and <strong>Privacy Policy</strong>; by participating, you agree to all of them.</p>
+
+        <h2>1. The Offer</h2>
+        <p>Players who pre-register for the Game on the official store page (Google Play) before the official release of the Game (the "Official Release") will receive a special pre-registration reward (the "Reward").</p>
+
+        <h2>2. Eligibility</h2>
+        <ul>
+            <li>Pre-register through the Game's official store page before the Official Release.</li>
+            <li>Meet the minimum age requirement stated in the Terms of Use (13 years or older).</li>
+            <li>Limit of one Reward per player and per game account.</li>
+        </ul>
+
+        <h2>3. Reward Delivery</h2>
+        <p>The Reward will be delivered to your <strong>in-game mailbox</strong> within <strong>up to 3 (three) days after the Official Release</strong> of the Game.</p>
+        <p>To receive the Reward, you must:</p>
+        <ul>
+            <li>Download and install the Game on your device;</li>
+            <li>Open and play the Game with your game account;</li>
+            <li>Accept the Game's Terms of Use and Privacy Policy.</li>
+        </ul>
+        <p>The Reward is granted to the game account used when you first play the Game and is claimed through the in-game mailbox.</p>
+
+        <h2>4. Reward Conditions</h2>
+        <ul>
+            <li>The Reward is a Virtual Item as defined in the Terms of Use: it is licensed, not sold, has no real-world or cash value, and cannot be exchanged, refunded, or transferred to other players or accounts.</li>
+            <li>We may replace the Reward content with an item of equal or greater in-game value if needed for game balance or technical reasons.</li>
+            <li>The Reward will not be duplicated or re-granted if the account is deleted, reset, or lost due to the player's actions.</li>
+        </ul>
+
+        <h2>5. Changes, Suspension, or Cancellation</h2>
+        <p>We reserve the right to modify, suspend, or cancel the Offer at any time, including the Reward content and these Offer Terms. Any material change will be posted on this page before it takes effect. If the Offer is canceled before the Official Release, no Reward will be due.</p>
+
+        <h2>6. Abuse and Fraud</h2>
+        <p>We may disqualify from the Offer any player who uses multiple accounts, automation, emulators, exploits, or any fraudulent means to obtain multiple Rewards, and we may revoke Rewards granted in violation of these Offer Terms.</p>
+
+        <div class="footer">
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about this Offer, please contact us at <strong>contact@bibiugames.com</strong>.</p>
+            <p>Bibiu Games</p>
+            <p><em>Last updated: August 15, 2026</em></p>
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+
+            // Get current full path
+            let currentPath = window.location.href;
+
+            // Replace language code in the path
+            const newPath = currentPath.replace(/\/(en-us|pt-br)\//, '/' + selectedLang + '/');
+
+            // Navigate to new path
+            window.location.href = newPath;
+        }
+    </script>
+</body>
+</html>
