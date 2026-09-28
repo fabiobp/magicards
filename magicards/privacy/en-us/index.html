@@ -88,7 +88,7 @@
 
         <h1>Privacy Policy for Magi Cards</h1>
 
-        <p><strong>Last Update:</strong> May 3, 2026</p>
+        <p><strong>Last Update:</strong> September 28, 2026</p>
 
         <p><em>"Your privacy is not in game"</em></p>
 
@@ -127,7 +127,10 @@
             <li><strong>Google Play Games player ID and display name</strong> — only if you choose to sign in with Google Play Games for achievements.</li>
             <li><strong>Device information</strong> — device model, operating system version, language, region, screen resolution, network type. Used for compatibility, troubleshooting, and ad delivery.</li>
             <li><strong>IP address</strong> — collected by all network calls; used by our service providers for security, fraud prevention, and approximate geolocation (country / region level only).</li>
-            <li><strong>Gameplay analytics events</strong> — non-content events such as: achievements claimed and completed, screens opened, buttons tapped, dungeons entered and cleared, equipment salvage and repair, attribute allocation, daily reward claimed, player death, level up, temple card summoned. Each event includes the Unity Player ID and gameplay context (player level, item context). When you change your character's display name, the previous and new name are recorded as part of an analytics event.</li>
+            <li><strong>Gameplay analytics events</strong> — non-content events such as: achievements claimed and completed, screens opened, buttons tapped, dungeons entered and cleared, equipment salvage and repair, attribute allocation, daily reward claimed, player death, level up, temple card summoned, and whether the notification reminder was shown, enabled, or closed. Each event includes the Unity Player ID and gameplay context (player level, item context). When you change your character's display name, the previous and new name are recorded as part of an analytics event.</li>
+            <li><strong>Notification token</strong> — a Firebase Cloud Messaging token for this install, together with the platform (Android or iOS) and the game version. We send it to our servers through Unity Cloud Code when you reach Home, so we can deliver notifications when your device allows them.</li>
+            <li><strong>Notification activity</strong> — the time you last entered Home, and, while a forge job is running, the job type and its scheduled end time. The end time is removed when you collect the job.</li>
+            <li><strong>On-device reminder state</strong> — whether we already showed the system notification permission and our later reminder. This stays on the device.</li>
             <li><strong>Purchase metadata</strong> — when you make an in-app purchase, Google Play (or Apple App Store, when iOS is launched) shares with us the product identifier, transaction identifier, purchase timestamp, and validation status. <strong>We do not receive your full payment card data, billing address, or store account email.</strong></li>
             <li><strong>Ad-interaction data</strong> — ad impressions, clicks, completions, mediation routing decisions, and frequency-capping signals. Collected by ironSource / LevelPlay and Unity Ads.</li>
             <li><strong>Crash and error events</strong> — basic exception data captured by Unity Analytics to diagnose stability issues. We do not currently use Sentry, Bugsnag, Crashlytics, or any third-party crash reporter.</li>
@@ -143,9 +146,12 @@
             <li><strong>Improve the Game</strong> — understand which features are used, fix crashes and bugs, balance gameplay difficulty and economy.</li>
             <li><strong>Display advertising</strong> — show rewarded ads with frequency capping and basic measurement. <strong>We do not engage in cross-context behavioral advertising for any user, in any jurisdiction</strong> (see Section 7).</li>
             <li><strong>Prevent fraud</strong> — detect cheating, account takeover, abuse of promo codes or in-app purchases.</li>
-            <li><strong>Communicate with you</strong> — through in-game mail and notices.</li>
+            <li><strong>Communicate with you</strong> — through in-game mail, notices, and optional device notifications described below.</li>
             <li><strong>Comply with legal obligations</strong> — respond to lawful requests, enforce our Terms, protect rights and safety.</li>
         </ul>
+        <h3>Notifications</h3>
+        <p>If you allow notifications, we use them to tell you when a forge craft or repair is finished, when a login reward is available, and when a World Boss event is available for your version of the Game. Some of these alerts are scheduled on your device. Others are delivered by Google Firebase Cloud Messaging.</p>
+        <p>On Android, the system asks for notification permission once, right after you accept this Policy. If you decline, we may show our own reminder a few more times. You can close that reminder. Allowing notifications is optional, and the Game works either way. You can turn notifications off at any time in your device settings, including the Forge, Rewards, and World Boss channels on Android.</p>
         <p>We do not use your information for automated decision-making that produces legal effects on you.</p>
 
         <h2>5. Legal Basis for Processing</h2>
@@ -153,7 +159,7 @@
         <ul>
             <li><strong>Execution of a contract</strong> (LGPD Art. 7, V) — to operate the Game, save your progress, deliver purchases.</li>
             <li><strong>Legitimate interest</strong> (LGPD Art. 7, IX) — for analytics, fraud prevention, security, and ad delivery, balanced against your rights.</li>
-            <li><strong>Consent</strong> (LGPD Art. 7, I) — when you actively accept this Policy on first launch, and for any optional features that require consent.</li>
+            <li><strong>Consent</strong> (LGPD Art. 7, I) — when you actively accept this Policy on first launch, when you allow notifications, and for any other optional features that require consent.</li>
             <li><strong>Compliance with legal obligation</strong> (LGPD Art. 7, II) — for tax, consumer-protection, and law-enforcement requests.</li>
         </ul>
 
@@ -162,7 +168,8 @@
 
         <table>
             <tr><th>Recipient</th><th>Purpose</th><th>Categories shared</th></tr>
-            <tr><td>Unity Technologies (Authentication, Cloud Save, Cloud Code, Analytics)</td><td>Account, save synchronization, server-side game logic, gameplay analytics</td><td>Unity Player ID, device info, gameplay events, save data</td></tr>
+            <tr><td>Unity Technologies (Authentication, Cloud Save, Cloud Code, Analytics)</td><td>Account, save synchronization, server-side game logic, gameplay analytics, and storing what is needed to send gameplay notifications</td><td>Unity Player ID, device info, gameplay events, save data, notification token, platform, game version, last Home entry, forge job type and end time</td></tr>
+            <tr><td>Google LLC (Firebase Cloud Messaging)</td><td>Deliver gameplay notifications to your device</td><td>Notification token, platform</td></tr>
             <tr><td>Google LLC / Google Play Games</td><td>Optional sign-in, achievements platform</td><td>Google Play Games player ID and display name (only if you sign in)</td></tr>
             <tr><td>Google Play Billing</td><td>Process Android purchases</td><td>Purchase token, product ID, transaction time</td></tr>
             <tr><td>Apple App Store / StoreKit (when iOS is launched)</td><td>Process iOS purchases</td><td>Transaction ID, product ID</td></tr>
@@ -194,6 +201,7 @@
             <li>Resolve disputes and enforce our agreements.</li>
             <li>Combat fraud and abuse.</li>
         </ul>
+        <p>We keep the notification token while your account is in use and refresh it on later launches. A forge job's scheduled end time is removed when you collect that job.</p>
         <p>If you do not launch the Game for 24 consecutive months, your save and analytics data may be aged out and deleted. Anonymized, aggregated data may be retained indefinitely. You can request deletion at any time (see Section 10).</p>
 
         <h2>10. Your Rights</h2>
@@ -264,7 +272,7 @@
             <p>You have the right to file a complaint with your local data protection authority if you believe your rights have been violated.</p>
             <p><strong>Bibiu Games</strong><br>
             Thank you for trusting us with your information.</p>
-            <p><em>Last updated: May 3, 2026</em></p>
+            <p><em>Last updated: September 28, 2026</em></p>
         </div>
     </div>
 
