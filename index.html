@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibiu GAMES - MagiCards Coming Soon</title>
+    <title>Bibiu GAMES</title>
     <style>
         * {
             margin: 0;
@@ -203,73 +203,11 @@
             margin-top: -10px;
         }
 
-        /* Countdown Section */
-        .countdown-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 1s ease-out 0.2s both;
-            max-width: 700px;
-            width: 90%;
-        }
-
-        .countdown-title {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            color: #4b5563;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .countdown-game {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 30px;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            padding: 20px 25px;
-            border-radius: 15px;
-            min-width: 100px;
-            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
-        }
-
-        .countdown-number {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            display: block;
-            line-height: 1;
-        }
-
-        .countdown-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-
         .message {
             text-align: center;
             max-width: 600px;
             margin: 0 auto 40px;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .message h2 {
@@ -284,6 +222,88 @@
             color: #6b7280;
             line-height: 1.8;
             margin-bottom: 15px;
+        }
+
+        /* Our Games */
+        .games-section {
+            max-width: 900px;
+            width: 90%;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .games-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #4b5563;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .game-banner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            min-height: 340px;
+            padding: 40px;
+            border-radius: 25px;
+            overflow: hidden;
+            color: #fff;
+            text-decoration: none;
+            background: #1a1028 url("magicards/assets/img/hero/feature.webp") center / cover no-repeat;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(12, 8, 24, 0.85) 0%, rgba(12, 8, 24, 0.45) 45%, rgba(12, 8, 24, 0) 75%);
+        }
+
+        .game-banner > * {
+            position: relative;
+        }
+
+        .game-banner:hover,
+        .game-banner:focus-visible {
+            outline: none;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 50px rgba(139, 92, 246, 0.45), 0 0 0 3px rgba(233, 196, 106, 0.9);
+        }
+
+        .game-banner-logo {
+            width: min(320px, 70%);
+            height: auto;
+            filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+        }
+
+        .game-banner-tag {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #e9d5ff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .game-banner-cta {
+            margin-top: 8px;
+            padding: 12px 26px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f8e2a6, #e9c46a);
+            color: #3b2410;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(233, 196, 106, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .game-banner:hover .game-banner-cta {
+            transform: translateX(4px);
         }
 
         /* Founder Section */
@@ -637,13 +657,41 @@
                 max-width: 85vw;
             }
 
-            .countdown-item {
-                min-width: 80px;
-                padding: 15px 18px;
+            .game-banner {
+                min-height: 300px;
+                padding: 28px 22px;
+                justify-content: flex-end;
             }
 
-            .countdown-number {
-                font-size: 2rem;
+            .game-banner::before {
+                background: linear-gradient(0deg, rgba(12, 8, 24, 0.9) 0%, rgba(12, 8, 24, 0.4) 60%, rgba(12, 8, 24, 0) 100%);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .header {
+                flex-direction: column;
+                gap: 6px;
+                padding: 10px 16px;
+            }
+
+            .header-logo {
+                font-size: 1.25rem;
+            }
+
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px 16px;
+            }
+
+            .header-nav a {
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+
+            .container {
+                padding-top: 110px;
             }
         }
     </style>
@@ -671,6 +719,7 @@
         <a href="index.html" class="header-logo">Bibiu GAMES</a>
         <nav class="header-nav">
             <a href="index.html">Home</a>
+            <a href="magicards/">MagiCards</a>
             <a href="founder.html">Meet the Founder</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -685,35 +734,20 @@
             </div>
         </div>
 
-        <!-- Countdown Section -->
-        <div class="countdown-section">
-            <h2 class="countdown-title">Coming Soon</h2>
-            <div class="countdown-game">MagiCards Game</div>
-            <div class="countdown-timer" id="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">180</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
-                    <span class="countdown-label">Seconds</span>
-                </div>
-            </div>
+        <div class="message">
+            <h2>Crafting Magical Worlds</h2>
+            <p>Bibiu GAMES creates magical gaming experiences that bring joy and wonder to players everywhere.</p>
         </div>
 
-        <div class="message">
-            <h2>Something Magical is Coming!</h2>
-            <p>We're crafting magical gaming experiences that will bring joy and wonder to players everywhere.</p>
-            <p>Get ready for MagiCards - a game that will transform how you play!</p>
-        </div>
+        <!-- Our Games -->
+        <section class="games-section" id="games">
+            <h2>Our Games</h2>
+            <a class="game-banner" href="magicards/">
+                <img class="game-banner-logo" src="magicards/assets/img/hero/logo.webp" alt="MagiCards" width="855" height="314">
+                <span class="game-banner-tag">Dungeon Crawler &amp; CCG &middot; Android</span>
+                <span class="game-banner-cta">Explore the dungeon &rarr;</span>
+            </a>
+        </section>
 
         <!-- Contact Form Section -->
         <div class="contact-section" id="contact">
@@ -749,37 +783,5 @@
     <div class="footer">
         <p>&copy; 2026 Bibiu GAMES. All rights reserved.</p>
     </div>
-
-    <script>
-        // Fixed release date: December 8, 2026
-        const releaseDate = new Date('2026-12-08T00:00:00');
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = releaseDate.getTime() - now;
-
-            if (distance < 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
 </body>
 </html>

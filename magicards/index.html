@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MagiCards — Dungeon Crawler &amp; Collectible Card Game | Bibiu Games</title>
+<meta name="description" content="Gather your cards, enter the dungeon and shape your destiny. MagiCards is a dungeon crawler and collectible card game: farm legendary loot, awaken your cards, forge gear, catch pets and join live events. Free on Google Play.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bibiu Games">
+<meta property="og:title" content="MagiCards — Gather your cards. Enter the dungeon.">
+<meta property="og:description" content="A dungeon crawler and collectible card game. 400+ levels, 200+ monsters, 200+ cards. Free on Google Play.">
+<meta property="og:url" content="https://www.bibiugames.com/magicards/">
+<meta property="og:image" content="https://www.bibiugames.com/magicards/assets/img/hero/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="preload" as="image" href="assets/img/hero/splash.webp" media="(min-width: 900px)">
+<link rel="preload" as="image" href="assets/img/hero/splash-m.webp" media="(max-width: 899px)">
+<link rel="stylesheet" href="assets/css/magicards.css">
+<script type="module" src="assets/js/magicards.js"></script>
+</head>
+<body>
+
+<div class="stage" id="stage" aria-hidden="true">
+  <canvas id="scene"></canvas>
+</div>
+
+<div class="hotspots" id="hotspots"></div>
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+
+<header class="hud" id="hud" hidden>
+  <img class="hud__logo" src="assets/img/hero/logo.webp" alt="MagiCards" width="855" height="314">
+  <div class="hud__progress">
+    <p class="hud__room" id="hudRoom"></p>
+    <ol class="hud__pips" id="hudPips" aria-label="Dungeon progress"></ol>
+    <p class="hud__found" id="hudFound"></p>
+  </div>
+  <a class="play-link" href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">
+    <img src="assets/img/ui/google-play.webp" alt="Get it on Google Play" width="564" height="168">
+  </a>
+</header>
+
+<div class="room-title" id="roomTitle" aria-hidden="true"><h2></h2><p></p></div>
+<p class="caption" id="caption" role="status" aria-live="polite"></p>
+
+<aside class="panel" id="panel" role="dialog" aria-labelledby="panelTitle" hidden>
+  <button class="panel__close" id="panelClose" type="button" aria-label="Close">&times;</button>
+  <div class="panel__visual" id="panelVisual"></div>
+  <h2 class="panel__title" id="panelTitle"></h2>
+  <div class="panel__text" id="panelText"></div>
+  <div class="panel__footer">
+    <p class="panel__found" id="panelFound"></p>
+    <button class="btn btn--ghost" id="panelContinue" type="button">Keep exploring</button>
+  </div>
+</aside>
+
+<div class="fade" id="fade" aria-hidden="true"></div>
+
+<main id="content">
+
+  <section class="hero" id="hero" aria-labelledby="heroTitle">
+    <picture class="hero__art">
+      <source media="(max-width: 899px)" srcset="assets/img/hero/splash-m.webp">
+      <img src="assets/img/hero/splash.webp" alt="" width="2400" height="1018">
+    </picture>
+    <span class="hero__glow" aria-hidden="true"></span>
+    <canvas class="hero__dive" aria-hidden="true"></canvas>
+    <div class="hero__embers" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <header class="hero__head">
+        <img class="hero__logo" src="assets/img/hero/logo.webp" alt="MagiCards" width="855" height="314">
+        <p class="hero__eyebrow">Dungeon Crawler &amp; Collectible Card Game</p>
+        <h1 class="hero__title" id="heroTitle">Gather your cards. Enter the dungeon. Shape your destiny.</h1>
+      </header>
+      <div class="hero__foot">
+        <ul class="chips" aria-label="Game highlights">
+          <li><strong>400+</strong> levels</li>
+          <li><strong>200+</strong> monsters</li>
+          <li><strong>200+</strong> cards</li>
+        </ul>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">
+          <img src="assets/img/ui/google-play.webp" alt="Get it on Google Play" width="564" height="168">
+        </a>
+      </div>
+    </div>
+    <a class="enter" id="enter" href="#battle">
+      <span class="enter__label">Enter the Dungeon</span>
+      <span class="enter__loader" aria-hidden="true"><span class="enter__bar"></span></span>
+    </a>
+  </section>
+
+  <section class="room" id="battle" data-room="battle" aria-labelledby="battleTitle">
+    <header class="room__head">
+      <h2 id="battleTitle">Fight. Loot. Repeat.</h2>
+      <p class="room__tagline">Every monster you defeat could drop your next treasure.</p>
+    </header>
+    <div class="spots">
+      <article class="spot" id="spot-hand">
+        <figure class="visual visual--fan">
+          <img src="assets/img/cards/1100.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/12800.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/14400.webp" alt="" width="512" height="720" loading="lazy">
+        </figure>
+        <h3>Your Deck Is Your Weapon.</h3>
+        <p>Battles are turn-based and every card counts. Play attacks, spells and buffs, chain them into combos, and outsmart 200+ monsters across the Forest, the Desert and the Ice.</p>
+      </article>
+      <article class="spot" id="spot-monster">
+        <figure class="visual visual--loot">
+          <span class="rarity rarity--common"><img src="assets/img/loot/coin.webp" alt="" loading="lazy">Common</span>
+          <span class="rarity rarity--rare"><img src="assets/img/loot/potion-heal.webp" alt="" loading="lazy">Rare</span>
+          <span class="rarity rarity--epic"><img src="assets/img/loot/helmet.webp" alt="" loading="lazy">Epic</span>
+          <span class="rarity rarity--legendary"><img src="assets/img/cards/10500.webp" alt="" loading="lazy">Legendary</span>
+        </figure>
+        <h3>Farm Like a Legend.</h3>
+        <p>Every monster carries its own loot. Your first victory on a level guarantees a reward, and Luck boosts your drops. Run it again and again — that legendary is waiting.</p>
+      </article>
+      <article class="spot" id="spot-loot">
+        <figure class="visual visual--grid">
+          <span><img src="assets/img/loot/torch.webp" alt="" loading="lazy">Torch</span>
+          <span><img src="assets/img/loot/bandage.webp" alt="" loading="lazy">Bandage</span>
+          <span><img src="assets/img/loot/bomb.webp" alt="" loading="lazy">Bomb</span>
+          <span><img src="assets/img/loot/provision.webp" alt="" loading="lazy">Provision</span>
+          <span><img src="assets/img/loot/escape.webp" alt="" loading="lazy">Escape</span>
+          <span><img src="assets/img/loot/luck.webp" alt="" loading="lazy">Luck</span>
+        </figure>
+        <h3>Pack Your Bag.</h3>
+        <p>Torches, bandages, bombs, provisions, escape items and luck charms — the right consumable saves the run. 1,100+ items to collect.</p>
+      </article>
+    </div>
+    <p class="room__passage">Danger lurks everywhere. Choose your path wisely.</p>
+  </section>
+
+  <section class="room" id="cards" data-room="cards" aria-labelledby="cardsTitle">
+    <header class="room__head">
+      <h2 id="cardsTitle">The Hall of Cards</h2>
+      <p class="room__tagline">Collect them. Upgrade them. Awaken their true power.</p>
+    </header>
+    <div class="spots">
+      <article class="spot" id="spot-altar">
+        <figure class="visual visual--reveal">
+          <img src="assets/img/cards/back.webp" alt="" width="512" height="717" loading="lazy">
+          <img src="assets/img/cards/10500.webp" alt="Fire Spear, a legendary card" width="512" height="720" loading="lazy">
+        </figure>
+        <h3>Summon Your Destiny.</h3>
+        <p>Summon new cards at the Temple and feel the thrill of every reveal. Common or legendary — any card can turn a battle.</p>
+      </article>
+      <article class="spot" id="spot-gallery">
+        <figure class="visual visual--strip">
+          <img src="assets/img/cards/11800.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/14100.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/15500.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/16500.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/18700.webp" alt="" width="512" height="720" loading="lazy">
+          <img src="assets/img/cards/19000.webp" alt="" width="512" height="720" loading="lazy">
+        </figure>
+        <h3>200+ Unique Cards.</h3>
+        <p>Found in summons or dropped by monsters. Millions of combinations, one goal: the perfect deck.</p>
+      </article>
+      <article class="spot" id="spot-awaken">
+        <figure class="visual visual--awaken">
+          <img src="assets/img/cards/20400.webp" alt="" width="512" height="720" loading="lazy">
+          <span class="stars"><img src="assets/img/ui/star.webp" alt=""><img src="assets/img/ui/star.webp" alt=""><img src="assets/img/ui/star.webp" alt=""></span>
+        </figure>
+        <h3>Awaken Their True Power.</h3>
+        <p>Level up your cards and awaken stronger forms. 500+ evolutions await the dedicated collector.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="room" id="forge" data-room="forge" aria-labelledby="forgeTitle">
+    <header class="room__head">
+      <h2 id="forgeTitle">The Forge</h2>
+      <p class="room__tagline">Every hero needs a blacksmith — and a good potion.</p>
+    </header>
+    <div class="spots">
+      <article class="spot" id="spot-blacksmith">
+        <figure class="visual visual--portrait">
+          <img src="assets/img/forge/blacksmith-place.webp" alt="The Blacksmith with hammer and anvil" width="1536" height="2084" loading="lazy">
+        </figure>
+        <h3>Forged for Battle.</h3>
+        <p>Forge new equipment and repair worn gear before your next run.</p>
+      </article>
+      <article class="spot" id="spot-rack">
+        <figure class="visual visual--slots">
+          <span><img src="assets/img/loot/helmet.webp" alt="" loading="lazy">Helmet</span>
+          <span><img src="assets/img/loot/armour.webp" alt="" loading="lazy">Body Armour</span>
+          <span><img src="assets/img/loot/shield.webp" alt="" loading="lazy">Shield</span>
+          <span><img src="assets/img/loot/amulet.webp" alt="" loading="lazy">Amulet</span>
+          <span><img src="assets/img/loot/boots.webp" alt="" loading="lazy">Boots</span>
+        </figure>
+        <h3>Gear Up Your Build.</h3>
+        <p>Helmets, body armour, shields, amulets and boots. Combine equipment and attribute points into a build that fits your style — tank, critical hits, speed… your call.</p>
+      </article>
+      <article class="spot" id="spot-apothecary">
+        <figure class="visual visual--brew">
+          <img class="visual__ingredient" src="assets/img/forge/ingredient-1.webp" alt="" loading="lazy">
+          <img class="visual__ingredient" src="assets/img/forge/ingredient-2.webp" alt="" loading="lazy">
+          <img class="visual__ingredient" src="assets/img/forge/ingredient-3.webp" alt="" loading="lazy">
+          <img src="assets/img/loot/potion-heal.webp" alt="" loading="lazy">
+          <img src="assets/img/loot/potion-2.webp" alt="" loading="lazy">
+          <img src="assets/img/loot/potion-3.webp" alt="" loading="lazy">
+          <img src="assets/img/loot/potion-4.webp" alt="" loading="lazy">
+        </figure>
+        <h3>Brew Your Edge.</h3>
+        <p>Find recipes in the dungeon and let the Apothecary brew them into potions that heal, buff and carry you deeper.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="room" id="events" data-room="events" aria-labelledby="eventsTitle">
+    <header class="room__head">
+      <h2 id="eventsTitle">Live Events</h2>
+      <p class="room__tagline">Some challenges are bigger than one hero.</p>
+    </header>
+    <div class="spots">
+      <article class="spot" id="spot-boss">
+        <figure class="visual visual--board">
+          <img src="assets/img/monsters/worldboss.webp" alt="The World Boss, a colossal ogre" width="598" height="687" loading="lazy">
+          <ol class="ranking">
+            <li><span>1</span>Valkyra<b>1,284,900</b></li>
+            <li><span>2</span>NightWarden<b>1,102,350</b></li>
+            <li><span>3</span>EmberMage<b>986,120</b></li>
+            <li class="ranking__you"><span>4</span>You<b>?</b></li>
+          </ol>
+        </figure>
+        <h3>World Boss.</h3>
+        <p>A colossal boss appears for a limited time. Every player fights the same enemy — deal the most damage and climb the ranking.</p>
+      </article>
+      <article class="spot" id="spot-tower">
+        <figure class="visual visual--icon">
+          <img src="assets/img/events/dragon-tower.webp" alt="" loading="lazy">
+        </figure>
+        <h3>Dragon Tower.</h3>
+        <p>Climb floor after floor — how high can you go?</p>
+      </article>
+      <article class="spot" id="spot-stack">
+        <figure class="visual visual--icon">
+          <img src="assets/img/events/victory-stack.webp" alt="" loading="lazy">
+        </figure>
+        <h3>Victory Stack.</h3>
+        <p>A timed event where every win stacks up. Chain victories for bigger rewards and fight for a place among the Top 100.</p>
+      </article>
+      <article class="spot" id="spot-egg">
+        <figure class="visual visual--icon">
+          <img src="assets/img/pet/egg-1.webp" alt="" loading="lazy">
+        </figure>
+        <h3>A Mysterious Egg…</h3>
+        <p>Pet eggs hide in event rooms. Something is moving inside!</p>
+      </article>
+      <article class="spot" id="spot-pet">
+        <figure class="visual visual--pet">
+          <img src="assets/img/pet/ruffin.webp" alt="Ruffin, a loyal dog pet with a backpack" width="768" height="823" loading="lazy">
+          <img class="visual__coin" src="assets/img/pet/ruffin-coin.webp" alt="" loading="lazy">
+        </figure>
+        <h3>Ruffin Joined You!</h3>
+        <p>Pets travel at your side, carry your loot in their backpacks, level up and unlock skills. 30 companions are waiting to be found.</p>
+      </article>
+      <article class="spot" id="spot-portal">
+        <h3>Portal Challenge!</h3>
+        <p>Clear a dungeon and the exit portal may test your wits. Win for a bonus reward!</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="exit" id="exit" aria-labelledby="exitTitle">
+    <div class="exit__art" aria-hidden="true"></div>
+    <div class="exit__inner">
+      <div class="exit__head">
+        <img class="exit__logo" src="assets/img/hero/logo.webp" alt="MagiCards" width="855" height="314" loading="lazy">
+        <h2 class="exit__title" id="exitTitle">Your Adventure Begins Now.</h2>
+      </div>
+      <div class="exit__cta">
+        <p class="exit__sub">Free to play on Android.</p>
+        <a class="badge badge--big" href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">
+          <img src="assets/img/ui/google-play.webp" alt="Get it on Google Play" width="564" height="168" loading="lazy">
+        </a>
+      </div>
+      <div class="exit__actions">
+        <button class="btn btn--ghost" id="exploreAgain" type="button" hidden>Explore again</button>
+        <a class="btn btn--ghost" href="/">Back to Bibiu Games</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="challenge" id="challenge" role="dialog" aria-modal="true" aria-labelledby="challengeTitle" hidden>
+  <div class="challenge__inner">
+    <header class="challenge__banner">
+      <h2 id="challengeTitle"></h2>
+      <p id="challengeText"></p>
+    </header>
+    <div class="board" id="board">
+      <div class="board__grid" id="boardGrid" role="grid" aria-label="Puzzle board"></div>
+      <div class="board__lock" id="boardLock" aria-hidden="true"></div>
+      <img class="challenge__pet" id="challengePet" src="assets/img/pet/ruffin.webp" alt="" hidden>
+    </div>
+    <p class="challenge__hint" id="challengeHint">Tap a piece, then tap another to swap them.</p>
+    <div class="reward" id="reward" hidden>
+      <p class="reward__title">Bonus reward unlocked!</p>
+      <div class="reward__items" aria-hidden="true">
+        <img src="assets/img/loot/chest.webp" alt="">
+        <img src="assets/img/loot/coin.webp" alt="">
+        <img src="assets/img/loot/card-soul.webp" alt="">
+      </div>
+      <button class="btn btn--gold" id="rewardContinue" type="button">Continue</button>
+    </div>
+    <button class="btn btn--ghost challenge__skip" id="challengeSkip" type="button">Skip</button>
+  </div>
+</section>
+
+</body>
+</html>
