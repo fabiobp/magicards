@@ -177,6 +177,22 @@ a { color: var(--gold); }
   text-shadow: 0 4px 24px rgba(0, 0, 0, .9), 0 1px 3px #000;
 }
 .hero__foot .chips { justify-content: center; }
+/* Store badge with the Discord icon beside it, sized to the badge height (badge art is 564x168). */
+.hero__links { --badge-w: 200px; display: flex; align-items: center; gap: .6rem; }
+.hero__links .badge img { width: var(--badge-w); }
+.discord {
+  display: grid;
+  place-items: center;
+  width: calc(var(--badge-w) * 168 / 564);
+  aspect-ratio: 1;
+  border-radius: 22%;
+  color: #fff;
+  background: #5865f2;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25) inset, 0 6px 18px rgba(0, 0, 0, .45);
+  transition: transform .2s var(--ease-out), filter .2s;
+}
+.discord svg { width: 62%; height: auto; fill: currentColor; }
+.discord:hover { transform: translateY(-2px); filter: drop-shadow(0 6px 18px rgba(88, 101, 242, .55)); }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 
 /* "Enter the Dungeon" sits just below the dungeon arch in the art (position from hero.js). */
@@ -759,7 +775,7 @@ a { color: var(--gold); }
   .hero__logo { width: min(250px, 64vw); }
   .hero__eyebrow { font-size: .7rem; }
   .hero__title { font-size: clamp(1.15rem, 5.2vw, 1.6rem); }
-  .hero__foot .badge img { width: 180px; }
+  .hero__links { --badge-w: 180px; }
   .chips { justify-content: center; }
 }
 
@@ -772,7 +788,7 @@ a { color: var(--gold); }
   .hero__title { font-size: clamp(.95rem, 2.3vw, 1.2rem); }
   .hero__foot { grid-auto-flow: column; align-items: center; gap: .8rem; }
   .hero__foot .chips { flex-wrap: nowrap; }
-  .hero__foot .badge img { width: 130px; }
+  .hero__links { --badge-w: 130px; }
   .enter__label { padding: .65rem 1.4rem; font-size: 1rem; }
 }
 
