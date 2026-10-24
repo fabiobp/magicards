@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Player Attributes — MagiCards Wiki</title>
+<meta name="description" content="Every MagiCards player attribute you can see: what the number actually does.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/attributes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=4">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="combat.html">Combat</a>
+      <a href="events.html">Events</a>
+      <a href="traps.html">Traps</a>
+      <a href="attributes.html" class="is-current">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">Your character</p>
+    <h1>Player attributes</h1>
+    <p>These are the stats on your status screen and the fight numbers you can see. Equipment and some dungeon effects add on top of what you allocate. Hidden reserved defenses are not listed here.</p>
+    <div class="search">
+      <input type="search" data-search placeholder="Search attributes…" aria-label="Search attributes">
+    </div>
+    <nav class="jump" aria-label="On this page">
+      <a href="#combat">Combat</a>
+      <a href="#dungeon">Dungeon</a>
+      <a href="#loadout">Loadout</a>
+      <a href="#home">Home</a>
+    </nav>
+  </section>
+
+  <section class="section" id="combat" data-section>
+    <div class="section__head">
+      <img src="img/attributes/StrengthPoints.png" alt="">
+      <h2>Combat</h2>
+    </div>
+    <p class="lede">Numbers that change how a fight plays. Some rise with your level on their own. Others you spend points on.</p>
+    <div class="grid">
+      <article class="card" data-entry="max health life hp">
+        <div class="card__icon"><img src="img/attributes/MaxHealthPoints.png" alt=""></div>
+        <h3>Max Health</h3>
+        <p>Your life pool. One point is one maximum life. Floor and rope traps, soul burn, and percent heals all read this number. Equipment can add more.</p>
+      </article>
+      <article class="card" data-entry="mana movements base movements cards">
+        <div class="card__icon"><img src="img/attributes/BaseMovements.png" alt=""></div>
+        <h3>Mana</h3>
+        <p>How much mana you get each of your turns. Playing a card spends its cost even if Confusion makes it fizzle. This rises with your level. Some cards and pets can add mana for the current turn only.</p>
+      </article>
+      <article class="card" data-entry="cards draw hand">
+        <div class="card__icon"><img src="img/attributes/BaseCardsDraw.png" alt=""></div>
+        <h3>Cards Drawn</h3>
+        <p>How many cards you draw at the start of your action. This rises with your level. Battle Focus and some pets draw extra on top.</p>
+      </article>
+      <article class="card" data-entry="speed turn order">
+        <div class="card__icon"><img src="img/attributes/SpeedPoints.png" alt=""></div>
+        <h3>Speed</h3>
+        <p>Who acts first in a fight. Highest speed goes first. If two fighters share the same speed, the previous turn’s order is kept. Fast Poison on a pet uses your speed to decide how much poison it applies.</p>
+      </article>
+      <article class="card" data-entry="strength physical damage cards">
+        <div class="card__icon"><img src="img/attributes/StrengthPoints.png" alt=""></div>
+        <h3>Strength</h3>
+        <p>Added to Physical and Physical Piercing damage on your cards. Two Strength points add one damage (the game keeps the leftover half internally, then drops the fraction). It does not boost pet attacks, Mimic Bite, or damage-over-time.</p>
+      </article>
+      <article class="card" data-entry="intelligence magical magic damage cards">
+        <div class="card__icon"><img src="img/attributes/IntelligencePoints.png" alt=""></div>
+        <h3>Intelligence</h3>
+        <p>Same rule as Strength, for Magical and Magical Piercing card hits. Two Intelligence points add one damage. Pet magic hits and percent-of-life spells do not use this.</p>
+      </article>
+      <article class="card" data-entry="accuracy hit chance">
+        <div class="card__icon"><img src="img/attributes/AccuracyPoints.png" alt=""></div>
+        <h3>Accuracy</h3>
+        <p>Each point is 1% accuracy. A hit’s dodge chance is the target’s evasion minus this accuracy. If that result is not above zero, the attack cannot be dodged. Your pets use your accuracy when they attack.</p>
+      </article>
+      <article class="card" data-entry="evasion dodge">
+        <div class="card__icon"><img src="img/attributes/EvasionPoints.png" alt=""></div>
+        <h3>Evasion</h3>
+        <p>Each point is 1% evasion. You only roll a dodge when your evasion is higher than the attacker’s accuracy. Poison, burn and bleed ticks do not roll dodge.</p>
+      </article>
+      <article class="card" data-entry="critical chance crit">
+        <div class="card__icon"><img src="img/attributes/CriticalChancePoints.png" alt=""></div>
+        <h3>Critical Chance</h3>
+        <p>Each point is 0.8% chance that a card hit crits. Crits are rolled when the card’s damage is calculated. Pets do not crit this way.</p>
+      </article>
+      <article class="card" data-entry="critical damage crit">
+        <div class="card__icon"><img src="img/attributes/CriticalDmgPoints.png" alt=""></div>
+        <h3>Critical Damage</h3>
+        <p>Each point is +1% extra on a crit. A crit multiplies the post-crit base by (1 + this bonus), then drops the fraction. Weakness and Double Next Damage apply after that.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="dungeon" data-section>
+    <div class="section__head">
+      <img src="img/attributes/LuckPoints.png" alt="">
+      <h2>Dungeon</h2>
+    </div>
+    <p class="lede">Stats that change a run outside the raw hit formula.</p>
+    <div class="grid">
+      <article class="card" data-entry="trap detection disarm">
+        <div class="card__icon"><img src="img/attributes/TrapDetectionPoints.png" alt=""></div>
+        <h3>Trap Detection</h3>
+        <p>Widens the hope window on the trap timing game. More points make the safe tap larger, up to a cap so it never covers the whole bar. It does not skip the challenge or reveal the trap type.</p>
+      </article>
+      <article class="card" data-entry="luck drops chests power-up portal">
+        <div class="card__icon"><img src="img/attributes/LuckPoints.png" alt=""></div>
+        <h3>Luck</h3>
+        <p>Each point is a 2% luck factor. On monster loot it raises the chance that the roll gives an item instead of nothing, without changing the mix among the items that do drop. After a fight it also shifts power-up choices away from Common toward the rarer tiers, while keeping the ratios among those rarer tiers. It also helps dungeon chests and the exit portal minigame. Luck consumables add to this for the rest of the dungeon.</p>
+      </article>
+      <article class="card" data-entry="pet loyalty capture">
+        <div class="card__icon"><img src="img/attributes/PetLoyalityPoints.png" alt=""></div>
+        <h3>Pet Loyalty</h3>
+        <p>Gives extra time on the pet-capture tap game. Each point adds a short slice of time, up to a cap. It does not shorten pet ability cooldowns — that is a card spell, not this stat.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="loadout" data-section>
+    <div class="section__head">
+      <img src="img/attributes/DeckSize.png" alt="">
+      <h2>Loadout</h2>
+    </div>
+    <p class="lede">How many cards, potions, consumables and relics you can take.</p>
+    <div class="grid">
+      <article class="card" data-entry="deck size cards">
+        <div class="card__icon"><img src="img/attributes/DeckSize.png" alt=""></div>
+        <h3>Deck Size</h3>
+        <p>How many cards you must put in your battle deck. You cannot enter a dungeon unless the deck is exactly that size. This rises with your level.</p>
+      </article>
+      <article class="card" data-entry="potion slots capacity">
+        <div class="card__icon"><img src="img/attributes/PotionCapacityPoints.png" alt=""></div>
+        <h3>Potion Slots</h3>
+        <p>How many different potion types you can pack for a dungeon. Locked slots stay locked until this stat unlocks them.</p>
+      </article>
+      <article class="card" data-entry="potion stack max">
+        <div class="card__icon"><img src="img/attributes/PotionMaxStackPoints.png" alt=""></div>
+        <h3>Potion Stack</h3>
+        <p>How many of one potion you can put in a single slot.</p>
+      </article>
+      <article class="card" data-entry="consumable slots capacity">
+        <div class="card__icon"><img src="img/attributes/ConsumableCapacityPoints.png" alt=""></div>
+        <h3>Consumable Slots</h3>
+        <p>How many different consumables you can pack in the dungeon drawer. Provision is not one of these slots.</p>
+      </article>
+      <article class="card" data-entry="consumable stack max">
+        <div class="card__icon"><img src="img/attributes/ConsumableMaxStackPoints.png" alt=""></div>
+        <h3>Consumable Stack</h3>
+        <p>How many of one consumable you can put in a single drawer slot.</p>
+      </article>
+      <article class="card" data-entry="inventory capacity backpack home">
+        <div class="card__icon"><img src="img/attributes/InventoryCapacityPoints.png" alt=""></div>
+        <h3>Inventory</h3>
+        <p>Space in your home inventory, not the pet’s dungeon backpack. Shop extras can add more on top. The backpack you carry in a run is the pet’s own capacity.</p>
+      </article>
+      <article class="card" data-entry="relic carry slots">
+        <div class="card__icon"><img src="img/attributes/RelicCarryCapacityPoints.png" alt=""></div>
+        <h3>Relic Slots</h3>
+        <p>How many relics you can take into a dungeon.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="home" data-section>
+    <div class="section__head">
+      <img src="img/attributes/CraftPoints.png" alt="">
+      <h2>Home</h2>
+    </div>
+    <p class="lede">Stats that matter at the forge, the card table, or on the status list.</p>
+    <div class="grid">
+      <article class="card" data-entry="leadership awake stars cards">
+        <div class="card__icon"><img src="img/attributes/LeadershipPoints.png" alt=""></div>
+        <h3>Leadership</h3>
+        <p>Required to awaken a card. Your Leadership must be higher than that card’s current stars. Coins are a separate cost. The first awakening in an account can be free of coins; Leadership is still required.</p>
+      </article>
+      <article class="card" data-entry="craft forge repair recycle durability">
+        <div class="card__icon"><img src="img/attributes/CraftPoints.png" alt=""></div>
+        <h3>Craft</h3>
+        <p>Each point is 2% at the forge: cheaper repairs, more materials when you recycle, and a durability cushion on gear. That cushion soaks wear before the item’s real durability is used. Broken gear loses the cushion.</p>
+      </article>
+      <article class="card" data-entry="alchemy potions craft">
+        <div class="card__icon"><img src="img/attributes/AlchemyPoints.png" alt=""></div>
+        <h3>Alchemy</h3>
+        <p>It is on your status screen. The in-game line talks about potion crafting. I did not find any potion brew or potion-use code that reads this number.</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="empty" data-empty hidden>No attribute matches that search.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+<script src="js/wiki.js"></script>
+</body>
+</html>

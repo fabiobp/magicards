@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Traps — MagiCards Wiki</title>
+<meta name="description" content="Every MagiCards dungeon trap: the disarm timing game and what each trap does if it fires.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/traps.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=4">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="combat.html">Combat</a>
+      <a href="events.html">Events</a>
+      <a href="traps.html" class="is-current">Traps</a>
+      <a href="attributes.html">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">Dungeon rooms</p>
+    <h1>Traps</h1>
+    <p>A trap room always starts a timing challenge. Hit the window and nothing happens. Miss, and the trap in that room fires. Trap Detection makes the safe window wider.</p>
+    <div class="search">
+      <input type="search" data-search placeholder="Search traps…" aria-label="Search traps">
+    </div>
+  </section>
+
+  <section class="section" data-section>
+    <div class="grid grid--events">
+      <article class="card" data-entry="disarm challenge trap detection timing">
+        <div class="trap-art"><img src="img/traps/disarm.png" alt=""></div>
+        <div class="meta"><span class="tag">Challenge</span></div>
+        <h3>Disarm</h3>
+        <p>A marker runs back and forth. Tap while it is over the hope window to disarm. Miss and the trap fires. More Trap Detection widens that window. A Torch can warn you the next room is a trap before you walk in.</p>
+      </article>
+
+      <article class="card" data-entry="floor trap spikes life damage">
+        <div class="trap-art"><img src="img/traps/floor.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Life</span></div>
+        <h3>Floor Trap</h3>
+        <p>If it fires, you lose a portion of your maximum life. Shields do not stop it. Stronger floor traps take a larger slice. This can kill you.</p>
+      </article>
+
+      <article class="card" data-entry="rope trap snare life damage">
+        <div class="trap-art"><img src="img/traps/rope.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Life</span></div>
+        <h3>Rope Trap</h3>
+        <p>If it fires, you lose a portion of your maximum life — the same kind of hit as a floor trap. It does not take Provision. Stronger rope traps take a larger slice. This can kill you.</p>
+      </article>
+
+      <article class="card" data-entry="gas trap poison mist backpack loot">
+        <div class="trap-art"><img src="img/traps/gas.png" alt=""></div>
+        <div class="meta"><span class="tag">Backpack</span></div>
+        <h3>Gas Trap</h3>
+        <p>If it fires, random items disappear from your dungeon backpack — one item on most gas traps, two on the heaviest. Empty slots are ignored. If the backpack has nothing to take, you lose nothing. Equipped gear, relics, potions in potion slots, and cards are not this loot.</p>
+      </article>
+
+      <article class="card" data-entry="mimic trap chest infection bite card deck">
+        <div class="trap-art"><img src="img/traps/mimic.png" alt=""></div>
+        <div class="meta"><span class="tag">Deck</span></div>
+        <h3>Mimic Trap</h3>
+        <p>If it fires, Mimic Bite cards are stuffed into your deck. How many, and how hard they bite, depends on the trap. A Mimic Bite is a one-mana Attack you can play on yourself: it deals Physical Piercing to you, then burns. Your Strength does not change that bite. Stronger mimics add more cards and a harder bite.</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="empty" data-empty hidden>No trap matches that search.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+<script src="js/wiki.js"></script>
+</body>
+</html>

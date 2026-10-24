@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Consumables &amp; Relics — MagiCards Wiki</title>
+<meta name="description" content="Every MagiCards consumable and relic: how to use them, where they work, and what they do.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/items.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=4">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="combat.html">Combat</a>
+      <a href="events.html">Events</a>
+      <a href="traps.html">Traps</a>
+      <a href="attributes.html">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html" class="is-current">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">What you carry</p>
+    <h1>Consumables &amp; relics</h1>
+    <p>Pack consumables in your dungeon setup slots. Use them from the dungeon drawer. Relics sit on the relic bar and work on their own. Provision is not a drawer item — it is paid when you enter.</p>
+    <div class="search">
+      <input type="search" data-search placeholder="Search items…" aria-label="Search items">
+    </div>
+    <nav class="jump" aria-label="On this page">
+      <a href="#consumables">Consumables</a>
+      <a href="#relics">Relics</a>
+    </nav>
+  </section>
+
+  <section class="section" id="consumables" data-section>
+    <h2>Consumables</h2>
+    <p class="lede">Pack them in your dungeon setup (up to your consumable slots). In a run they sit in the item drawer — open on the map, tucked to the side in a fight. Tap to use. Long-press to read the description. Potions are a separate drawer row and are not listed here. Provision is not packed in those slots.</p>
+    <div class="grid">
+      <article class="card" data-entry="provision food entrance">
+        <div class="card__icon"><img src="img/consumables/provision.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--common">Common</span>
+          <span class="tag tag--use">Entrance fee</span>
+        </div>
+        <h3>Provision</h3>
+        <p class="where">Paid automatically when you start a dungeon. Not used from the drawer.</p>
+        <p>Food that pays the dungeon entrance fee. Kept with your other currencies at home, not in a consumable slot.</p>
+      </article>
+
+      <article class="card" data-entry="bomb wall room excavation">
+        <div class="card__icon"><img src="img/consumables/bomb.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--common">Common</span>
+          <span class="tag tag--use">Wall room · Excavation</span>
+        </div>
+        <h3>Bomb</h3>
+        <p class="where">Tap in the drawer only while you are in a wall room or at Excavation. Cannot be used in a fight.</p>
+        <p>In a wall room it opens the wall so you can pass. At Excavation it blows the mound and you receive equipment. You can also tap the wall or the mound in those rooms — that spends a bomb if you have one. In a wall room, holding on the wall opens it without a bomb and you take damage. At Excavation, if you have no bomb you can watch one ad per dungeon to blow the mound once.</p>
+      </article>
+
+      <article class="card" data-entry="luck drop chance chest power-up portal">
+        <div class="card__icon"><img src="img/consumables/luck.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--common">Common</span>
+          <span class="tag tag--use">Map or fight</span>
+        </div>
+        <h3>Luck</h3>
+        <p class="where">Tap in the drawer on the map, or during your action in a fight. Lasts until the dungeon ends. Each use stacks with your other luck.</p>
+        <p>Raises the chance that a roll gives something instead of nothing: monster loot, dungeon chests, and post-fight power-up choices. Also makes the exit portal minigame more likely to appear. It does not change the mix of rarities among the items that do drop.</p>
+      </article>
+
+      <article class="card" data-entry="escape flee fight">
+        <div class="card__icon"><img src="img/consumables/escape.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--rare">Rare</span>
+          <span class="tag tag--use">Fight only</span>
+        </div>
+        <h3>Escape</h3>
+        <p class="where">Tap in the drawer during a normal fight. Does not work in a boss fight, and does not work on the map.</p>
+        <p>Ends the fight so the doors open and you can leave. You still collect loot from enemies already dead. You do not get a post-fight power-up from that fight.</p>
+      </article>
+
+      <article class="card" data-entry="torch map rooms reveal">
+        <div class="card__icon"><img src="img/consumables/torch.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--uncommon">Uncommon</span>
+          <span class="tag tag--use">Map only</span>
+        </div>
+        <h3>Torch</h3>
+        <p class="where">Tap in the drawer on the map after the current room is finished. Cannot be used in a fight.</p>
+        <p>Shows the room type ahead, behind, left and right: fight, treasure, event, empty, boss or trap. The overlay closes when you move, or after a short time.</p>
+      </article>
+
+      <article class="card" data-entry="bandage bleed">
+        <div class="card__icon"><img src="img/consumables/bandage.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--epic">Epic</span>
+          <span class="tag tag--use">Map or fight</span>
+        </div>
+        <h3>Bandage</h3>
+        <p class="where">Tap in the drawer on the map, or during your action in a fight.</p>
+        <p>Removes Bleed from you. It does not heal life and does not clear other debuffs.</p>
+      </article>
+
+      <article class="card" data-entry="fast repair durability equipment">
+        <div class="card__icon"><img src="img/consumables/fast-repair.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--legendary">Legendary</span>
+          <span class="tag tag--use">Map or fight</span>
+        </div>
+        <h3>Fast Repair</h3>
+        <p class="where">Tap in the drawer on the map, or during your action in a fight.</p>
+        <p>Picks one random equipped item that is fully broken and restores it to barely working (one durability left). If nothing equipped is fully broken, nothing is repaired.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="relics" data-section>
+    <h2>Relics</h2>
+    <p class="lede">Equip up to your relic slots in home setup. In the dungeon they sit on the relic bar. Long-press to read them — you do not tap them to activate. Pieces of the same relic can be assembled at home. Some relics can also appear as a post-fight power-up.</p>
+    <div class="grid">
+      <article class="card" data-entry="master dealer deck discard burn piles">
+        <div class="card__icon"><img src="img/relics/1.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--common">Common</span>
+          <span class="tag tag--use">Fight</span>
+        </div>
+        <h3>Master Dealer Relic</h3>
+        <p class="where">Works by itself in a fight.</p>
+        <p>Lets you tap your deck, discard and burn piles to look through the cards in them. Tapping one pile closes the others.</p>
+      </article>
+
+      <article class="card" data-entry="extra cash coins chest">
+        <div class="card__icon"><img src="img/relics/7.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--common">Common</span>
+          <span class="tag tag--use">Treasure rooms</span>
+        </div>
+        <h3>Extra Cash Relic</h3>
+        <p class="where">Works when a dungeon chest gives regular coins.</p>
+        <p>Adds extra coins on top of the chest coin pile. Does not change coins dropped by monsters. Stacks with Treasure Hunter.</p>
+      </article>
+
+      <article class="card" data-entry="blood ritual draw life">
+        <div class="card__icon"><img src="img/relics/3.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--rare">Rare</span>
+          <span class="tag tag--use">Every fight</span>
+        </div>
+        <h3>Blood Ritual Relic</h3>
+        <p class="where">Hurts you at the start of every fight. Extra draw lasts for that fight, then is applied again on the next one.</p>
+        <p>You lose a little life when the fight starts. You draw one extra card each turn.</p>
+      </article>
+
+      <article class="card" data-entry="fortified shield">
+        <div class="card__icon"><img src="img/relics/4.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--epic">Epic</span>
+          <span class="tag tag--use">Your turn</span>
+        </div>
+        <h3>Fortified Relic</h3>
+        <p class="where">Works at the start of your turn, after leftover shields are cleared (unless you have Keep Defense).</p>
+        <p>Gives you Physical and Magical shield based on your max life.</p>
+      </article>
+
+      <article class="card" data-entry="treasure hunter coins chest">
+        <div class="card__icon"><img src="img/relics/11.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--epic">Epic</span>
+          <span class="tag tag--use">Treasure rooms</span>
+        </div>
+        <h3>Treasure Hunter Relic</h3>
+        <p class="where">Works when a dungeon chest gives regular coins.</p>
+        <p>Adds extra coins on top of the chest coin pile. Does not change coins dropped by monsters. Stacks with Extra Cash.</p>
+      </article>
+
+      <article class="card" data-entry="extra life revive">
+        <div class="card__icon"><img src="img/relics/2.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--legendary">Legendary</span>
+          <span class="tag tag--use">On death</span>
+        </div>
+        <h3>Extra Life Relic</h3>
+        <p class="where">Works when you die in a fight. Quitting does not trigger it.</p>
+        <p>Heals you for 1 life and then the relic is gone, so it can save you once. If a heal-block (such as Sickness) stops that heal, you still die.</p>
+      </article>
+
+      <article class="card" data-entry="yin movement draw">
+        <div class="card__icon"><img src="img/relics/5.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--legendary">Legendary</span>
+          <span class="tag tag--use">Whole run</span>
+        </div>
+        <h3>Yin Relic</h3>
+        <p class="where">Applied when the dungeon loads, and again at the start of every fight (fight-only stats reset between fights).</p>
+        <p>You draw one less card each turn, and you gain one extra movement. Can be worn with Yang.</p>
+      </article>
+
+      <article class="card" data-entry="yang movement draw">
+        <div class="card__icon"><img src="img/relics/6.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--legendary">Legendary</span>
+          <span class="tag tag--use">Whole run</span>
+        </div>
+        <h3>Yang Relic</h3>
+        <p class="where">Applied when the dungeon loads, and again at the start of every fight (fight-only stats reset between fights).</p>
+        <p>You draw one extra card each turn, and you lose one movement. Can be worn with Yin.</p>
+      </article>
+
+      <article class="card" data-entry="luck kill coins monster">
+        <div class="card__icon"><img src="img/relics/10.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--legendary">Legendary</span>
+          <span class="tag tag--use">On kill</span>
+        </div>
+        <h3>Luck Kill Relic</h3>
+        <p class="where">Works when a monster drop includes regular coins.</p>
+        <p>Increases those coin amounts. Does not change coins from chests, and does not change other loot.</p>
+      </article>
+
+      <article class="card" data-entry="cursed shield potions locked">
+        <div class="card__icon"><img src="img/relics/8.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--cursed">Cursed</span>
+          <span class="tag tag--use">Your turn</span>
+        </div>
+        <h3>Cursed Shield Relic</h3>
+        <p class="where">Can appear as a post-fight power-up. Works at the start of your turn.</p>
+        <p>Gives you Physical and Magical shield based on your max life (at least 1). That shield is removed at the end of your turn. Your potion slots stay locked for the rest of the dungeon.</p>
+      </article>
+
+      <article class="card" data-entry="cursed totem random debuff">
+        <div class="card__icon"><img src="img/relics/9.png" alt=""></div>
+        <div class="meta">
+          <span class="tag tag--cursed">Cursed</span>
+          <span class="tag tag--use">Your turn</span>
+        </div>
+        <h3>Cursed Totem Relic</h3>
+        <p class="where">Can appear as a post-fight power-up. Works at the start of your turn.</p>
+        <p>Picks a random combat debuff and applies a few stacks of it. Half the time it hits you. The other half it hits every living enemy.</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="empty" data-empty hidden>No item matches that search.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+<script src="js/wiki.js"></script>
+</body>
+</html>

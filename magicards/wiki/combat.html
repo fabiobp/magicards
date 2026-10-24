@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Combat — MagiCards Wiki</title>
+<meta name="description" content="Every MagiCards attack, shield, buff and debuff, with icons and what they do.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/combat.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=4">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="combat.html" class="is-current">Combat</a>
+      <a href="events.html">Events</a>
+      <a href="traps.html">Traps</a>
+      <a href="attributes.html">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">Fight</p>
+    <h1>Attacks, shields, buffs &amp; debuffs</h1>
+    <p>These are the combat effects you see on cards and on the fight bar. Amounts change by card and stack — this page explains what each one does.</p>
+    <div class="search">
+      <input type="search" data-search placeholder="Search combat…" aria-label="Search combat">
+    </div>
+    <nav class="jump" aria-label="On this page">
+      <a href="#attacks">Attacks</a>
+      <a href="#shields">Shields</a>
+      <a href="#buffs">Buffs</a>
+      <a href="#debuffs">Debuffs</a>
+    </nav>
+  </section>
+
+  <section class="section" id="attacks" data-section>
+    <div class="section__head">
+      <img src="img/attacks/card-type.png" alt="">
+      <h2>Attacks</h2>
+    </div>
+    <p class="lede">Attack cards deal one of these damage types. Matching shields can absorb a hit before it reaches life. Piercing and damage-over-time ignore shields.</p>
+    <div class="grid">
+      <article class="card" data-entry="physical attack damage">
+        <div class="card__icon"><img src="img/attacks/physical.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Physical</h3>
+        <p>A physical hit. Physical shields absorb it first, then Physical and Magical shields. Magical-only shields do not stop it.</p>
+      </article>
+      <article class="card" data-entry="physical piercing attack">
+        <div class="card__icon"><img src="img/attacks/physical-piercing.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Physical Piercing</h3>
+        <p>A physical hit that ignores every shield and goes straight to life.</p>
+      </article>
+      <article class="card" data-entry="magical magic attack damage">
+        <div class="card__icon"><img src="img/attacks/magical.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Magical</h3>
+        <p>A magic hit. Magical shields absorb it first, then Physical and Magical shields. Physical-only shields do not stop it.</p>
+      </article>
+      <article class="card" data-entry="magical piercing magic attack">
+        <div class="card__icon"><img src="img/attacks/magical-piercing.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Magical Piercing</h3>
+        <p>A magic hit that ignores every shield and goes straight to life.</p>
+      </article>
+      <article class="card" data-entry="poison attack">
+        <div class="card__icon"><img src="img/attacks/poison.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Poison</h3>
+        <p>Damage over time that hits life. Shields do not absorb it.</p>
+      </article>
+      <article class="card" data-entry="burn attack fire">
+        <div class="card__icon"><img src="img/attacks/burn.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Burn</h3>
+        <p>Fire damage over time that hits life. Shields do not absorb it.</p>
+      </article>
+      <article class="card" data-entry="bleed attack">
+        <div class="card__icon"><img src="img/attacks/bleed.png" alt=""></div>
+        <div class="meta"><span class="tag">Attack</span></div>
+        <h3>Bleed</h3>
+        <p>Wound damage over time that hits life. Shields do not absorb it.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="shields" data-section>
+    <div class="section__head">
+      <img src="img/shields/card-type.png" alt="">
+      <h2>Shields</h2>
+    </div>
+    <p class="lede">Defense cards and some relics or buffs give you a shield. It soaks matching hits, then leftover damage goes to life. Damage Immunity can still save your life after shields are hit.</p>
+    <div class="grid">
+      <article class="card" data-entry="physical shield defense">
+        <div class="card__icon"><img src="img/shields/hud-physical.png" alt=""></div>
+        <div class="meta"><span class="tag">Shield</span></div>
+        <h3>Physical</h3>
+        <p>Absorbs Physical attacks. Magical and piercing hits ignore it.</p>
+      </article>
+      <article class="card" data-entry="magical magic shield defense">
+        <div class="card__icon"><img src="img/shields/hud-magical.png" alt=""></div>
+        <div class="meta"><span class="tag">Shield</span></div>
+        <h3>Magical</h3>
+        <p>Absorbs Magical attacks. Physical and piercing hits ignore it.</p>
+      </article>
+      <article class="card" data-entry="physical and magical shield all dual">
+        <div class="card__icon"><img src="img/shields/hud-physical-and-magical.png" alt=""></div>
+        <div class="meta"><span class="tag">Shield</span></div>
+        <h3>Physical and Magical</h3>
+        <p>Absorbs both Physical and Magical attacks after the matching single shield. Piercing still ignores it.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="buffs" data-section>
+    <div class="section__head">
+      <img src="img/buffs/card-type.png" alt="">
+      <h2>Buffs</h2>
+    </div>
+    <p class="lede">Helpful statuses on you — extra damage, shields, heals, or cleanses. Many fade over turns or are used up when they trigger.</p>
+    <div class="grid">
+      <article class="card" data-entry="double next damage">
+        <div class="card__icon"><img src="img/buffs/doublenextdamage.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Double Next Damage</h3>
+        <p>Doubles the damage of your next attack, then is used up. Does not stack.</p>
+      </article>
+      <article class="card" data-entry="next attack piercing">
+        <div class="card__icon"><img src="img/buffs/nextattackpiercing.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Next Attack Piercing</h3>
+        <p>Your next Physical or Magical attack ignores shields (it becomes piercing). Used up on that attack. Does not stack.</p>
+      </article>
+      <article class="card" data-entry="keep defense shield">
+        <div class="card__icon"><img src="img/buffs/keepdefense.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Keep Defense</h3>
+        <p>Leftover shields stay into the next turn instead of being cleared. Each stack covers one of your turns.</p>
+      </article>
+      <article class="card" data-entry="physical defense aura shield">
+        <div class="card__icon"><img src="img/buffs/physicaldefenseaura.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Physical Defense Aura</h3>
+        <p>At the end of the turn, grants Physical shield equal to its stacks, then loses a stack. A fight pact can keep granting this for the whole fight without losing stacks.</p>
+      </article>
+      <article class="card" data-entry="magical defense aura shield">
+        <div class="card__icon"><img src="img/buffs/magicaldefenseaura.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Magical Defense Aura</h3>
+        <p>At the end of the turn, grants Magical shield equal to its stacks, then loses a stack.</p>
+      </article>
+      <article class="card" data-entry="defense conversion shield">
+        <div class="card__icon"><img src="img/buffs/defenseconversion.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Defense Conversion</h3>
+        <p>While it lasts, every shield you gain becomes Physical and Magical. Loses a stack when you act. When it runs out on you, you get No Defense.</p>
+      </article>
+      <article class="card" data-entry="physical damage reduction">
+        <div class="card__icon"><img src="img/buffs/physicaldamagereduction.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Physical Damage Reduction</h3>
+        <p>Lowers every incoming Physical hit — including piercing — by the current stacks. Hits do not use it up. Fresh amounts add together. Loses a stack at the start of your turn. Does not help against poison, burn or bleed.</p>
+      </article>
+      <article class="card" data-entry="magical damage reduction">
+        <div class="card__icon"><img src="img/buffs/magicaldamagereduction.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Magical Damage Reduction</h3>
+        <p>Lowers every incoming Magical hit — including piercing — by the current stacks. Hits do not use it up. Fresh amounts add together. Loses a stack at the start of your turn. Does not help against poison, burn or bleed.</p>
+      </article>
+      <article class="card" data-entry="damage immunity invincible">
+        <div class="card__icon"><img src="img/buffs/damageimmunity.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Damage Immunity</h3>
+        <p>Incoming damage cannot take your life. Shields can still be hit. Loses a stack at the start of your turn.</p>
+      </article>
+      <article class="card" data-entry="retaliate reflect physical">
+        <div class="card__icon"><img src="img/buffs/retaliate.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Retaliate</h3>
+        <p>When a Physical or Physical Piercing hit reaches your life, you deal half of that life damage back (at least 1). One stack is used per hit. Does not fade on its own.</p>
+      </article>
+      <article class="card" data-entry="magic reflector reflect">
+        <div class="card__icon"><img src="img/buffs/magicreflector.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Magic Reflector</h3>
+        <p>When a Magical or Magical Piercing hit reaches your life, you deal half of that life damage back (at least 1). One stack is used per hit. Does not fade on its own.</p>
+      </article>
+      <article class="card" data-entry="lifesteal heal">
+        <div class="card__icon"><img src="img/buffs/lifesteal.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Lifesteal</h3>
+        <p>When you deal damage to life — not shields — you heal that much, up to your remaining stacks. Those stacks are used up.</p>
+      </article>
+      <article class="card" data-entry="double heal">
+        <div class="card__icon"><img src="img/buffs/doubleheal.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Double Heal</h3>
+        <p>Doubles the next heal you receive, then is used up. Does not stack. Sickness still blocks the heal.</p>
+      </article>
+      <article class="card" data-entry="regeneration heal">
+        <div class="card__icon"><img src="img/buffs/regeneration.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Regeneration</h3>
+        <p>At the start of your turn, heals 1 life per stack, then loses a stack. Sickness blocks the heal.</p>
+      </article>
+      <article class="card" data-entry="battle focus draw card">
+        <div class="card__icon"><img src="img/buffs/battlefocus.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Battle Focus</h3>
+        <p>Draws one extra card at the start of each of your actions, then loses a stack. Playing it again replaces the old one.</p>
+      </article>
+      <article class="card" data-entry="card copy cloner">
+        <div class="card__icon"><img src="img/buffs/cardcopy.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Card Copy</h3>
+        <p>The next card you play that can be copied is cloned into your hand. Each stack is one clone. Skips Card Cloner itself and single-use cards. Used up on that play. Soul Anchor does not freeze it.</p>
+      </article>
+      <article class="card" data-entry="soul anchor freeze">
+        <div class="card__icon"><img src="img/buffs/soulanchor.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Soul Anchor</h3>
+        <p>Freezes the fight buffs you already have. Frozen buffs still work, but they cannot fade or be stripped. Debuffs, Card Copy, Candle Life, and dungeon-long effects are left alone. When Soul Anchor ends, the frozen buffs are removed.</p>
+      </article>
+      <article class="card" data-entry="candle life pact burn">
+        <div class="card__icon"><img src="img/buffs/candlelife.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Candle Life</h3>
+        <p>Your attack hits apply Burn to the enemies they hit. You also gain Burn at the start of your turn. Lasts the whole fight. Soul Anchor does not freeze it.</p>
+      </article>
+      <article class="card" data-entry="poison antidote cleanse">
+        <div class="card__icon"><img src="img/buffs/poisonantidote.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Poison Antidote</h3>
+        <p>Removes poison stacks equal to the antidote amount. Cards that grant this usually clear all poison.</p>
+      </article>
+      <article class="card" data-entry="paralysis antidote cleanse">
+        <div class="card__icon"><img src="img/buffs/paralysisantidote.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Paralysis Antidote</h3>
+        <p>Removes paralysis.</p>
+      </article>
+      <article class="card" data-entry="burn antidote cleanse">
+        <div class="card__icon"><img src="img/buffs/burnantidote.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Burn Antidote</h3>
+        <p>Removes burn stacks equal to the antidote amount. Cards that grant this usually clear all burn.</p>
+      </article>
+      <article class="card" data-entry="bleed antidote bandage cleanse">
+        <div class="card__icon"><img src="img/buffs/bleedantidote.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Bleed Antidote</h3>
+        <p>Removes bleed stacks equal to the antidote amount. A Bandage from the item drawer clears all bleed.</p>
+      </article>
+      <article class="card" data-entry="remove vulnerable cleanse">
+        <div class="card__icon"><img src="img/buffs/removevulnerable.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Remove Vulnerable</h3>
+        <p>Removes Vulnerable.</p>
+      </article>
+      <article class="card" data-entry="remove weakness cleanse">
+        <div class="card__icon"><img src="img/buffs/removeweakness.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Remove Weakness</h3>
+        <p>Removes Weakness.</p>
+      </article>
+      <article class="card" data-entry="remove confusion cleanse">
+        <div class="card__icon"><img src="img/buffs/removeconfusion.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Remove Confusion</h3>
+        <p>Removes Confusion.</p>
+      </article>
+      <article class="card" data-entry="remove all debuffs cleanse">
+        <div class="card__icon"><img src="img/buffs/removealldebuffs.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Remove All Debuffs</h3>
+        <p>Clears every debuff on the target.</p>
+      </article>
+      <article class="card" data-entry="hatch timer egg dragon">
+        <div class="card__icon"><img src="img/buffs/hatchtimer.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Buff</span></div>
+        <h3>Hatching</h3>
+        <p>Countdown on a dragon egg. The egg’s own behaviour counts it down and hatches the dragon. It is not a normal fading buff, and Remove All Buffs leaves it alone.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="debuffs" data-section>
+    <div class="section__head">
+      <img src="img/debuffs/card-type.png" alt="">
+      <h2>Debuffs</h2>
+    </div>
+    <p class="lede">Harmful statuses. Some damage you each turn, some stop cards or heals, some strip your defenses.</p>
+    <div class="grid">
+      <article class="card" data-entry="poison debuff">
+        <div class="card__icon"><img src="img/debuffs/poison.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Poison</h3>
+        <p>At the end of the turn, deals damage to life, then loses a stack. Shields do not absorb it.</p>
+      </article>
+      <article class="card" data-entry="burn debuff fire">
+        <div class="card__icon"><img src="img/debuffs/burn.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Burn</h3>
+        <p>At the end of the turn, deals its full stacks as damage to life, then is removed. Shields do not absorb it.</p>
+      </article>
+      <article class="card" data-entry="bleed debuff">
+        <div class="card__icon"><img src="img/debuffs/bleed.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Bleed</h3>
+        <p>At the end of the turn, deals damage to life equal to its stacks. Does not fade on its own. Use a Bandage or Bleed Antidote to clear it. Shields do not absorb it.</p>
+      </article>
+      <article class="card" data-entry="paralysis stun attack">
+        <div class="card__icon"><img src="img/debuffs/paralysis.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Paralysis</h3>
+        <p>You cannot play Attack cards this turn. Enemies with it skip their attack. Does not stack. Fades at the end of the turn.</p>
+      </article>
+      <article class="card" data-entry="confusion miscast">
+        <div class="card__icon"><img src="img/debuffs/confusion.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Confusion</h3>
+        <p>On you only. Each card you play has a 50% chance to fizzle: the card is spent and still costs mana, but does nothing. Fades at the end of your turn.</p>
+      </article>
+      <article class="card" data-entry="weakness less damage">
+        <div class="card__icon"><img src="img/debuffs/weakness.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Weakness</h3>
+        <p>Your attacks deal less damage. Fades at the end of your turn. If the target is also Vulnerable, the two cancel on that hit.</p>
+      </article>
+      <article class="card" data-entry="vulnerable more damage">
+        <div class="card__icon"><img src="img/debuffs/vulnerable.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Vulnerable</h3>
+        <p>You take more damage from Physical and Magical hits, including piercing. Fades at the end of your turn. Weakness on the attacker cancels this on that hit.</p>
+      </article>
+      <article class="card" data-entry="magic ink magical">
+        <div class="card__icon"><img src="img/debuffs/magicink.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Magic Ink</h3>
+        <p>The next Magical or Magical Piercing hit against the marked target deals more damage, then this is used up. Does not stack. Also fades at the end of the turn if unused.</p>
+      </article>
+      <article class="card" data-entry="sickness no heal">
+        <div class="card__icon"><img src="img/debuffs/sickness.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Sickness</h3>
+        <p>Blocks all healing — potions, cards, pets and buffs. Fades at the end of the turn.</p>
+      </article>
+      <article class="card" data-entry="no defense shield block">
+        <div class="card__icon"><img src="img/debuffs/nodefense.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>No Defense</h3>
+        <p>Blocks every way of gaining shields. Fades at the end of the holder’s turn. Does not last the whole fight.</p>
+      </article>
+      <article class="card" data-entry="corrosion shield eat">
+        <div class="card__icon"><img src="img/debuffs/corrosion.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Corrosion</h3>
+        <p>Eats the next shields the target gains, starting with Physical, then Magical, then Physical and Magical. Used up by that amount. Does not fade on its own.</p>
+      </article>
+      <article class="card" data-entry="panic skip enemy">
+        <div class="card__icon"><img src="img/debuffs/panic.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Panic</h3>
+        <p>Enemies may skip their action. Does not apply to you. Fades at the end of their turn.</p>
+      </article>
+      <article class="card" data-entry="fire landmine burn attack">
+        <div class="card__icon"><img src="img/debuffs/firelandmine.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Fire Landmine</h3>
+        <p>When you play an Attack card, you gain Burn. Fades at the end of your turn.</p>
+      </article>
+      <article class="card" data-entry="soul burn pact life">
+        <div class="card__icon"><img src="img/debuffs/soulburn.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Soul Burn</h3>
+        <p>At the end of each turn, loses a portion of max life as burn damage. Lasts for the fight.</p>
+      </article>
+      <article class="card" data-entry="blood tithe pact life mana">
+        <div class="card__icon"><img src="img/buffs/bloodtithe.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Blood Tithe</h3>
+        <p>When it starts, you lose that life once and your cards cost less mana. Then you lose a portion of max life at the start of each of your turns. Lasts the whole fight.</p>
+      </article>
+      <article class="card" data-entry="remove all buffs strip">
+        <div class="card__icon"><img src="img/debuffs/removeallbuffs.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Remove All Buffs</h3>
+        <p>Strips fight buffs from the target. The hatch countdown on a dragon egg is left alone.</p>
+      </article>
+      <article class="card" data-entry="remove lifesteal">
+        <div class="card__icon"><img src="img/debuffs/removelifesteal.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Debuff</span></div>
+        <h3>Remove Lifesteal</h3>
+        <p>Removes Lifesteal stacks equal to the amount.</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="empty" data-empty hidden>No combat entry matches that search.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+<script src="js/wiki.js"></script>
+</body>
+</html>

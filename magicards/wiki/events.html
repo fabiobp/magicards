@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dungeon Events — MagiCards Wiki</title>
+<meta name="description" content="Every MagiCards dungeon event: what you can choose and what it does to you.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/events.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=4">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="combat.html">Combat</a>
+      <a href="events.html" class="is-current">Events</a>
+      <a href="traps.html">Traps</a>
+      <a href="attributes.html">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">Inside the dungeon</p>
+    <h1>Dungeon events</h1>
+    <p>Event rooms can heal you, curse you, trade with you, or change a card. You can skip most of them. Shrines always apply when you touch them.</p>
+    <div class="search">
+      <input type="search" data-search placeholder="Search events…" aria-label="Search events">
+    </div>
+  </section>
+
+  <section class="section" data-section>
+    <div class="grid grid--events">
+      <article class="card" data-entry="fountain of life heal">
+        <div class="event-art"><img src="img/events/fountain.png" alt=""></div>
+        <div class="meta"><span class="tag">Heal</span></div>
+        <h3>Fountain of Life</h3>
+        <p>Touch the fountain. It heals a large part of your life. There is no skip and no cost.</p>
+      </article>
+
+      <article class="card" data-entry="mystical portal boss teleport">
+        <div class="event-art"><img src="img/events/portal.png" alt=""></div>
+        <div class="meta"><span class="tag">Travel</span></div>
+        <h3>Mystical Portal</h3>
+        <p>Step through to jump straight to this floor’s boss room, or skip and keep exploring the floor.</p>
+      </article>
+
+      <article class="card" data-entry="bet cups backpack gamble">
+        <div class="event-art"><img src="img/events/bet.png" alt=""></div>
+        <div class="meta"><span class="tag">Gamble</span></div>
+        <h3>Bet</h3>
+        <p>Pick an item from your backpack and wager it on a cup. Win and you keep the original plus a copy. Lose and the item is gone. Skip leaves with the item.</p>
+      </article>
+
+      <article class="card" data-entry="relic merchant trade coins">
+        <div class="event-art"><img src="img/events/relic-merchant.png" alt=""></div>
+        <div class="meta"><span class="tag">Trade</span></div>
+        <h3>Relic Merchant</h3>
+        <p>Deal: he takes one random relic you brought into the dungeon and pays you coins. Skip: walk away.</p>
+      </article>
+
+      <article class="card" data-entry="crazy potion maker brew upgrade buy">
+        <div class="event-art"><img src="img/events/crazy-potion-maker.png" alt=""></div>
+        <div class="meta"><span class="tag">Trade</span></div>
+        <h3>Crazy Potion Maker</h3>
+        <p>If you have potions, she asks for your weakest one. Offer it for a chance at a much stronger potion of the same kind — or lose it. If you have none, she can sell you a basic healing potion. Skip leaves you as you are.</p>
+      </article>
+
+      <article class="card" data-entry="dark flames burn card deck">
+        <div class="event-art"><img src="img/events/dark-flames.png" alt=""></div>
+        <div class="meta"><span class="tag">Risk</span></div>
+        <h3>Dark Flames</h3>
+        <p>Offer a card from this dungeon’s deck to the fire. That card is gone for the rest of the run. The flames give nothing back. Skip to leave your deck alone.</p>
+      </article>
+
+      <article class="card" data-entry="ancient altar ritual card xp">
+        <div class="event-art"><img src="img/events/ancient-altar.png" alt=""></div>
+        <div class="meta"><span class="tag">Ritual</span></div>
+        <h3>Ancient Altar</h3>
+        <p>Choose a card and start the ritual. Success gives the card a large amount of extra XP. Failure resets that card’s XP. The result stays after you leave the dungeon. Skip to walk away.</p>
+      </article>
+
+      <article class="card" data-entry="excavation excalibur bomb equipment treasure">
+        <div class="event-art"><img src="img/events/excavation.png" alt=""></div>
+        <div class="meta"><span class="tag">Treasure</span></div>
+        <h3>Excavation</h3>
+        <p>Spend a Bomb to blow the mound and receive equipment. Out of bombs, you can watch one ad per dungeon to dig once. Skip to leave it buried.</p>
+      </article>
+
+      <article class="card" data-entry="pet capture egg hatch minigame">
+        <div class="event-art"><img src="img/events/pet-capture.webp" alt=""></div>
+        <div class="meta"><span class="tag">Pet</span></div>
+        <h3>Pet Capture</h3>
+        <p>An egg hatches. Tap the pet enough times before it escapes. Catch it and it joins you as loot. Fail or skip and it gets away.</p>
+      </article>
+
+      <article class="card" data-entry="blessed shrine blessing attribute buff">
+        <div class="event-art"><img src="img/events/blessed-shrine.png" alt=""></div>
+        <div class="meta"><span class="tag tag--buff">Blessing</span></div>
+        <h3>Blessed Shrine</h3>
+        <p>Touch it to raise one of your dungeon stats for the rest of the run. There is no skip. The shrine may already show which stat, or pick one when you touch it.</p>
+      </article>
+
+      <article class="card" data-entry="cursed shrine curse attribute debuff">
+        <div class="event-art"><img src="img/events/cursed-shrine.png" alt=""></div>
+        <div class="meta"><span class="tag tag--debuff">Curse</span></div>
+        <h3>Cursed Shrine</h3>
+        <p>Touch it to lower one of your dungeon stats for the rest of the run. There is no skip. The shrine may already show which stat, or pick one when you touch it.</p>
+      </article>
+
+      <article class="card" data-entry="random shrine fate attribute">
+        <div class="event-art"><img src="img/events/random-shrine.png" alt=""></div>
+        <div class="meta"><span class="tag">Fate</span></div>
+        <h3>Random Shrine</h3>
+        <p>Touch it and tempt your fate. The same stat can rise or fall. There is no skip.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" data-section>
+    <h2>Shrine stats</h2>
+    <p class="lede">Blessed, Cursed and Random shrines change one of these for the rest of the dungeon.</p>
+    <div class="chips">
+      <span class="chip" data-entry="max health shrine"><img src="img/events/health.png" alt="">Max Health</span>
+      <span class="chip" data-entry="movements shrine mana"><img src="img/events/movements.png" alt="">Movements</span>
+      <span class="chip" data-entry="cards draw shrine"><img src="img/events/cards-draw.png" alt="">Cards Draw</span>
+      <span class="chip" data-entry="speed shrine"><img src="img/events/speed.png" alt="">Speed</span>
+      <span class="chip" data-entry="strength shrine"><img src="img/events/strength.png" alt="">Strength</span>
+      <span class="chip" data-entry="intelligence shrine"><img src="img/events/intelligence.png" alt="">Intelligence</span>
+      <span class="chip" data-entry="accuracy shrine"><img src="img/events/accuracy.png" alt="">Accuracy</span>
+      <span class="chip" data-entry="evasion shrine"><img src="img/events/evasion.png" alt="">Evasion</span>
+      <span class="chip" data-entry="critical chance shrine"><img src="img/events/crit-chance.png" alt="">Critical Chance</span>
+      <span class="chip" data-entry="critical damage shrine"><img src="img/events/crit-damage.png" alt="">Critical Damage</span>
+      <span class="chip" data-entry="luck shrine"><img src="img/events/luck.png" alt="">Luck</span>
+    </div>
+  </section>
+
+  <p class="empty" data-empty hidden>No event matches that search.</p>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+<script src="js/wiki.js"></script>
+</body>
+</html>

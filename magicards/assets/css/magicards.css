@@ -180,6 +180,20 @@ a { color: var(--gold); }
 /* Store badge with the Discord icon beside it, sized to the badge height (badge art is 564x168). */
 .hero__links { --badge-w: 200px; display: flex; align-items: center; gap: .6rem; }
 .hero__links .badge img { width: var(--badge-w); }
+.wiki-link {
+  display: grid;
+  place-items: center;
+  height: calc(var(--badge-w) * 168 / 564);
+  padding: 0 1.15em;
+  border-radius: 12px;
+  color: var(--gold-hi);
+  background: rgba(20, 15, 28, .6);
+  box-shadow: 0 0 0 2px rgba(233, 196, 106, .55) inset;
+  font: 800 .95rem/1 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.wiki-link:hover { background: rgba(60, 44, 20, .55); }
 .discord {
   display: grid;
   place-items: center;
