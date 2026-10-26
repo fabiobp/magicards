@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cards — MagiCards Wiki</title>
+<meta name="description" content="How MagiCards cards work: mana, card levels and XP, awakening, chains, and the other card rules explained simply.">
+<meta name="theme-color" content="#0b0910">
+<link rel="canonical" href="https://www.bibiugames.com/magicards/wiki/cards.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/wiki.css?v=6">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="./">
+      <img src="img/ui/logo.webp" alt="MagiCards" width="855" height="314">
+      <span>Wiki</span>
+    </a>
+    <nav class="nav" aria-label="Wiki">
+      <a href="./">Home</a>
+      <a href="cards.html" class="is-current">Cards</a>
+      <a href="combat.html">Combat</a>
+      <a href="events.html">Events</a>
+      <a href="traps.html">Traps</a>
+      <a href="attributes.html">Attributes</a>
+      <a href="pets.html">Pets</a>
+      <a href="items.html">Items</a>
+      <a href="../">Play site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="hero__kicker">Your deck</p>
+    <h1>Cards</h1>
+    <p>Cards are how you fight, how you protect yourself, and how you grow stronger. This page explains the rules that apply to every card. It does not list each card.</p>
+    <nav class="jump" aria-label="On this page">
+      <a href="#basics">Basics</a>
+      <a href="#mana">Mana</a>
+      <a href="#levels">Levels &amp; XP</a>
+      <a href="#awakening">Awakening</a>
+      <a href="#chains">Chains</a>
+      <a href="#other">Other rules</a>
+      <a href="#tips">Quick tips</a>
+    </nav>
+  </section>
+
+  <section class="section" id="basics" data-section>
+    <div class="section__head">
+      <img src="img/cards/type-attack.webp" alt="">
+      <h2>Basics</h2>
+    </div>
+    <p class="lede">Every card has the same parts. Here is an example card, Violence, with its parts numbered.</p>
+
+    <div class="split">
+      <div class="pin-wrap">
+        <img src="../assets/img/cards/1000.webp" alt="The Violence card: a red Attack card with a blue mana gem in the top-left corner">
+        <span class="pin" style="--x:11.7%;--y:8.6%">1</span>
+        <span class="pin" style="--x:75.2%;--y:8.6%">2</span>
+        <span class="pin" style="--x:88.3%;--y:29.5%">3</span>
+        <span class="pin" style="--x:39.5%;--y:79.2%">4</span>
+        <span class="pin" style="--x:60.9%;--y:79.2%">5</span>
+        <span class="pin" style="--x:49.8%;--y:91.4%">6</span>
+      </div>
+      <ol class="anatomy">
+        <li><strong>Mana cost.</strong> The blue gem shows how much mana the card costs to play. You pay it even if the card does nothing (see Mana).</li>
+        <li><strong>Name.</strong> The card’s name.</li>
+        <li><strong>Chain link.</strong> The color of the chain. Cards with the same color can link up for bonus effects (see Chains).</li>
+        <li><strong>Target.</strong> Who the card affects. The up arrow here means one enemy.</li>
+        <li><strong>Card type.</strong> The icon shows what kind of card it is. The sword here means an Attack.</li>
+        <li><strong>Card XP bar.</strong> Fills as the card gains experience. It shows MAX when the card is at its top level.</li>
+      </ol>
+    </div>
+
+    <h3 class="sub">Card types</h3>
+    <div class="grid">
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-attack.webp" alt=""></div>
+        <h3>Attack</h3>
+        <p>Deals damage to enemies.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-defense.webp" alt=""></div>
+        <h3>Defense</h3>
+        <p>Protects you with a shield or damage reduction.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-buff.webp" alt=""></div>
+        <h3>Buff</h3>
+        <p>Boosts you.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-debuff.webp" alt=""></div>
+        <h3>Debuff</h3>
+        <p>Weakens enemies.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-spell.webp" alt=""></div>
+        <h3>Spell</h3>
+        <p>A special effect that does something unusual, such as transforming or copying another card.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-pact.webp" alt=""></div>
+        <h3>Pact</h3>
+        <p>A deal with a trade-off. Read the card text before you play it.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/type-star.webp" alt=""></div>
+        <h3>Star Card</h3>
+        <p>The material used to awaken other cards (see Awakening).</p>
+      </article>
+    </div>
+
+    <h3 class="sub">Who the card affects</h3>
+    <div class="grid">
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/target-player.webp" alt=""></div>
+        <h3>You</h3>
+        <p>The card works on you instead of an enemy.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/target-enemy.webp" alt=""></div>
+        <h3>One enemy</h3>
+        <p>The card hits one chosen enemy.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/target-all-enemies.webp" alt=""></div>
+        <h3>All enemies</h3>
+        <p>The card hits every enemy in the fight.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/target-all.webp" alt=""></div>
+        <h3>All</h3>
+        <p>The card targets everything in the fight.</p>
+      </article>
+    </div>
+
+    <h3 class="sub">Stars</h3>
+    <p class="lede">Each card has a star rating from 0★ to 3★. More stars mean a higher level cap, more XP needed to level up, and a stronger version of the card when you awaken it. Normal cards start at level 1. Star Cards start at their top level.</p>
+    <h3 class="sub">Rarity</h3>
+    <p class="lede">Every card has a rarity: Common, Uncommon, Rare, Epic, or Legendary. You can see it in the card’s frame and border. Rarity does not change a card’s effect, mana cost, or chain. It affects two things:</p>
+    <div class="examples">
+      <figure>
+        <img src="../assets/img/cards/1100.webp" alt="Stabeye, a Common card with a bronze frame">
+        <figcaption>Common</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/cards/1300.webp" alt="Spikes, an Uncommon card with a silver frame">
+        <figcaption>Uncommon</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/cards/1200.webp" alt="Unhunted, a Rare card with a gold frame">
+        <figcaption>Rare</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/cards/1000.webp" alt="Violence, an Epic card with a red frame">
+        <figcaption>Epic</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/cards/5100.webp" alt="The Eye, a Legendary card with a rainbow frame">
+        <figcaption>Legendary</figcaption>
+      </figure>
+    </div>
+    <ul class="bullets">
+      <li><strong>Level-ups:</strong> the rarer the card, the more XP it needs for each level (see Levels &amp; XP).</li>
+      <li><strong>Temple summons:</strong> Common cards are the most likely to appear, and Legendary cards are the least likely.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="mana" data-section>
+    <div class="section__head">
+      <img src="img/cards/mana.webp" alt="">
+      <h2>Mana</h2>
+    </div>
+    <p class="lede">Mana is the fuel you spend to play cards. Think of it as your action budget for one turn.</p>
+    <ol class="steps">
+      <li>
+        <div>
+          <h4>You get a fresh amount every turn</h4>
+          <p>At the start of each of your turns, your mana is set back to your full amount.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Playing a card spends its mana cost</h4>
+          <p>Each card shows its cost in the blue gem. You can only play cards you can pay for.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Unused mana is lost</h4>
+          <p>Mana does not carry over to your next turn. Spend it while you can.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>You still pay even if the card fizzles</h4>
+          <p>If Confusion stops a card from working, you still lose its mana cost.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 class="sub">How much you get, by level</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Player level</th><th>Mana per turn</th><th>Cards drawn per turn</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1–2</td><td>3</td><td>3</td></tr>
+          <tr><td>3–10</td><td>3</td><td>4</td></tr>
+          <tr><td>11–14</td><td>4</td><td>4</td></tr>
+          <tr><td>15 and up</td><td>4</td><td>5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Your deck size also grows with your level. It starts at 5 cards at level 1 and reaches 18 at level 71. You must bring exactly that many cards into a dungeon. Not one more, not one less.</div>
+  </section>
+
+  <section class="section" id="levels" data-section>
+    <div class="section__head">
+      <img src="img/cards/xp-large.webp" alt="">
+      <h2>Levels &amp; XP</h2>
+    </div>
+    <p class="lede">Cards level up by gaining XP. Every card starts at level 1 with 0 XP, unless it is a Star Card (those start at their top level).</p>
+
+    <h3 class="sub">Top level</h3>
+    <p class="lede">A card’s top level depends on its stars: <strong>10 + 5 × stars</strong>. So a 0★ card tops out at level 10, and a 3★ card at level 25.</p>
+
+    <h3 class="sub">XP needed from level 1 to the top level</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Stars</th><th>Top level</th><th>Common</th><th>Uncommon</th><th>Rare</th><th>Epic</th><th>Legendary</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0★</td><td>10</td><td>630</td><td>945</td><td>1,260</td><td>1,575</td><td>1,890</td></tr>
+          <tr><td>1★</td><td>15</td><td>1,330</td><td>1,995</td><td>2,660</td><td>3,325</td><td>3,990</td></tr>
+          <tr><td>2★</td><td>20</td><td>2,280</td><td>3,420</td><td>4,560</td><td>5,700</td><td>6,840</td></tr>
+          <tr><td>3★</td><td>25</td><td>3,480</td><td>5,220</td><td>6,960</td><td>8,700</td><td>10,440</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Ways to get card XP</h3>
+    <ol class="steps">
+      <li>
+        <div>
+          <h4>Finish a dungeon</h4>
+          <p>Every card in your battle deck gets the same amount of XP: the total XP of the monsters you defeated on the run. Temporary cards and quest cards do not get it.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Use XP scrolls</h4>
+          <p>Open a card and use XP scrolls on it. The game picks the scrolls that waste the least XP. If you do not have enough scrolls, it uses them all.</p>
+          <div class="swatches">
+            <div class="swatch"><img src="img/cards/xp-small.webp" alt=""><span>Scroll I<br>100 XP</span></div>
+            <div class="swatch"><img src="img/cards/xp-medium.webp" alt=""><span>Scroll II<br>320 XP</span></div>
+            <div class="swatch"><img src="img/cards/xp-large.webp" alt=""><span>Scroll III<br>1,000 XP</span></div>
+            <div class="swatch"><img src="img/cards/xp-extralarge.webp" alt=""><span>Scroll IV<br>2,200 XP</span></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Ancient Altar (a gamble)</h4>
+          <p>Some dungeon rooms have an Ancient Altar. It is a gamble: if it succeeds, the card’s total XP is doubled. If it fails, the card’s XP is reset to 0.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 class="sub">Good to know</h3>
+    <ul class="bullets">
+      <li>Extra XP carries over into the next level. Nothing is wasted until the card reaches its top level.</li>
+      <li>Once a card is at its top level, any extra XP is lost.</li>
+      <li>If your run ends in defeat or you quit, that run’s monster XP is not added to your cards.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="awakening" data-section>
+    <div class="section__head">
+      <img src="img/attributes/LeadershipPoints.png" alt="">
+      <h2>Awakening</h2>
+    </div>
+    <p class="lede">Awakening turns a card into a stronger version of itself, with one more star. Each awakening costs a copy of the card, plus coins.</p>
+
+    <ol class="steps">
+      <li>
+        <div>
+          <h4>Pick the card to awaken</h4>
+          <p>It must be at its top level and below its maximum stars. Star Cards cannot be awakened.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Pick the material</h4>
+          <p>Use one of these, at its top level:</p>
+          <ul class="bullets">
+            <li>another copy of the same card with the same star level, or</li>
+            <li>a Star Card with the same star level.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Pay the coins and check your Leadership</h4>
+          <p>Your Leadership must be higher than the card’s current stars. Then pay the coin cost below.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Get the new version</h4>
+          <p>The material and the old card are used up. You get the next star version of the card at level 1 with 0 XP. If it was in your battle deck, it stays there.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 class="sub">Coin cost</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Awakening</th><th>Coins</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0★ → 1★</td><td><img class="inline-icon" src="../assets/img/loot/coin.webp" alt=""> 1,000</td></tr>
+          <tr><td>1★ → 2★</td><td><img class="inline-icon" src="../assets/img/loot/coin.webp" alt=""> 2,000</td></tr>
+          <tr><td>2★ → 3★</td><td><img class="inline-icon" src="../assets/img/loot/coin.webp" alt=""> 3,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Your very first awakening on this device is free of coins. You still need the Leadership and the material.</div>
+
+    <h3 class="sub">Leadership</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Your player level</th><th>Leadership</th><th>Can awaken cards up to</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1–8</td><td>1</td><td>0★ cards</td></tr>
+          <tr><td>9–19</td><td>2</td><td>1★ cards</td></tr>
+          <tr><td>20 and up</td><td>3</td><td>2★ cards</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="chains" data-section>
+    <div class="section__head">
+      <img src="img/cards/chain-red.webp" alt="">
+      <h2>Chains</h2>
+    </div>
+    <p class="lede">Many cards have a colored chain link. When you play cards one after another in the same turn, their chains can link up. A linked chain gives the cards after the first one a bonus.</p>
+
+    <h3 class="sub">The chain colors</h3>
+    <div class="swatches">
+      <div class="swatch"><img src="img/cards/chain-red.webp" alt=""><span>Red</span></div>
+      <div class="swatch"><img src="img/cards/chain-gray.webp" alt=""><span>Gray</span></div>
+      <div class="swatch"><img src="img/cards/chain-green.webp" alt=""><span>Green</span></div>
+      <div class="swatch"><img src="img/cards/chain-blue.webp" alt=""><span>Blue</span></div>
+      <div class="swatch"><img src="img/cards/chain-purple.webp" alt=""><span>Purple</span></div>
+      <div class="swatch"><img src="img/cards/chain-orange.webp" alt=""><span>Orange</span></div>
+      <div class="swatch"><img src="img/cards/chain-neon-green.webp" alt=""><span>Neon Green</span></div>
+      <div class="swatch"><img src="img/cards/chain-light-blue.webp" alt=""><span>Light Blue</span></div>
+    </div>
+    <p class="note">About a third of cards have no chain. Those cards are ignored by chains: they do not link, and they do not break a chain either. Yellow exists in the game art, but no card uses it yet.</p>
+
+    <h3 class="sub">The three outcomes</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Outcome</th><th>When it happens</th><th>Bonus?</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="inline-icon" src="img/cards/chain-red.webp" alt=""> Same-color chain</td>
+            <td>2 or more chained cards, all the same color.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><img class="inline-icon" src="img/cards/chain-rainbow.webp" alt=""> Rainbow chain</td>
+            <td>3 or more chained cards, every one a different color.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><img class="inline-icon" src="img/cards/chain-broken.webp" alt=""> Broken chain</td>
+            <td>Any other mix, such as two different colors, or three cards where two match.</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Examples</h3>
+    <div class="examples">
+      <figure>
+        <img src="../assets/img/cards/1100.webp" alt="Stabeye card, Red">
+        <figcaption>Stabeye (Red, Common)</figcaption>
+      </figure>
+      <span class="op">+</span>
+      <figure>
+        <img src="../assets/img/cards/600.webp" alt="Claw Attack card, Red">
+        <figcaption>Claw Attack (Red, Common)</figcaption>
+      </figure>
+      <span class="op">=</span>
+      <div class="example-result">Same-color chain. Claw Attack, played second, gets a bonus.</div>
+    </div>
+    <div class="examples">
+      <figure>
+        <img src="../assets/img/cards/100.webp" alt="Thick Leather card, Gray">
+        <figcaption>Thick Leather (Gray, Common)</figcaption>
+      </figure>
+      <span class="op">+</span>
+      <figure>
+        <img src="../assets/img/cards/1100.webp" alt="Stabeye card, Red">
+        <figcaption>Stabeye (Red, Common)</figcaption>
+      </figure>
+      <span class="op">+</span>
+      <figure>
+        <img src="../assets/img/cards/7100.webp" alt="Magma Shield card, Green">
+        <figcaption>Magma Shield (Green, Common)</figcaption>
+      </figure>
+      <span class="op">=</span>
+      <div class="example-result">Rainbow chain. The 2nd and 3rd cards get a bonus.</div>
+    </div>
+    <div class="examples">
+      <figure>
+        <img src="../assets/img/cards/1100.webp" alt="Stabeye card, Red">
+        <figcaption>Stabeye (Red, Common)</figcaption>
+      </figure>
+      <span class="op">+</span>
+      <figure>
+        <img src="../assets/img/cards/5700.webp" alt="Sabaku card, Light Blue">
+        <figcaption>Sabaku (Light Blue, Common)</figcaption>
+      </figure>
+      <span class="op">=</span>
+      <div class="example-result">Broken chain. No bonus for either card.</div>
+    </div>
+    <p class="note">Only the chain color matters. Rarity does not change chains, so every example uses Common cards.</p>
+
+    <h3 class="sub">How big is the bonus?</h3>
+    <p class="lede">The first card in a chain never gets a bonus. It is the starting point. Each card after it gets a bonus on its first attack, defense, buff, or debuff. Spells and Pacts are not boosted. Each step adds the bigger of two amounts: a flat +1, +2, +3… or 10%, 20%, 30%… of that card’s value. The table shows a 5-damage card and a 30-damage card.</p>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Position in chain</th><th>Bonus on a 5-damage card</th><th>Bonus on a 30-damage card</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1st card</td><td>none</td><td>none</td></tr>
+          <tr><td>2nd card</td><td>+1</td><td>+3</td></tr>
+          <tr><td>3rd card</td><td>+2</td><td>+6</td></tr>
+          <tr><td>4th card</td><td>+3</td><td>+9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Order matters. The first card in the chain gets no bonus, so the card you play first decides which cards get boosted.</div>
+  </section>
+
+  <section class="section" id="other" data-section>
+    <div class="section__head">
+      <img src="img/cards/single-use.webp" alt="">
+      <h2>Other rules</h2>
+    </div>
+    <p class="lede">More card rules you will run into.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/single-use.webp" alt=""></div>
+        <h3>Single-use</h3>
+        <p>Once you play it, it is gone for the rest of that dungeon run.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/ephemeral.webp" alt=""></div>
+        <h3>Ephemeral</h3>
+        <p>If you do not play it during its turn, it fades away when your turn ends.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/mana.webp" alt=""></div>
+        <h3>X-cost</h3>
+        <p>Cards that have X-cost will consume all your available mana when played. The effect is proportional to the mana consumed. They are powerful but should be played wisely.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/card-soul-basic.webp" alt=""></div>
+        <h3>Card Souls</h3>
+        <p>Each Card Soul is one card. At the Temple, you summon up to 6 cards at a time, using the souls of the class you pick. Each summoned card uses one soul.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/attributes/DeckSize.png" alt=""></div>
+        <h3>Exact deck size</h3>
+        <p>Your battle deck must match your Deck Size exactly before you can enter a dungeon.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><img src="img/cards/skull.webp" alt=""></div>
+        <h3>Defeat or quit</h3>
+        <p>If you lose a run or quit it, the monster XP from that run does not go to your cards.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="tips" data-section>
+    <div class="section__head">
+      <img src="img/cards/star.webp" alt="">
+      <h2>Quick tips</h2>
+    </div>
+    <ul class="bullets">
+      <li>Spend your mana every turn. Leftover mana is lost.</li>
+      <li>Build chains on purpose: pick two or three cards of one color, and play them in a row.</li>
+      <li>Level up the cards you use most. Finishing dungeons gives XP to every card in your deck.</li>
+      <li>Save XP scrolls for cards you plan to keep, and do not overspend XP on a card at its top level.</li>
+      <li>Check your Leadership before you try to awaken. Without enough, you cannot awaken the card.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p><a href="./">Back to wiki home</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=bibiugames.magicards" target="_blank" rel="noopener">Get MagiCards on Google Play</a></p>
+</footer>
+</body>
+</html>

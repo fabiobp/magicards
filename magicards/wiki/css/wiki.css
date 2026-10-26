@@ -202,9 +202,13 @@ a.card:hover {
   place-items: center;
   flex-shrink: 0;
 }
+.card__icon { position: relative; }
 .card__icon img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
   object-fit: contain;
 }
 .pet-art, .trap-art {
@@ -339,6 +343,201 @@ a.card:hover {
   gap: 12px;
 }
 .foot a { font-weight: 700; text-decoration: none; }
+
+/* ---------- Cards page ---------- */
+.sub {
+  font-size: 1.1rem;
+  margin: 30px 0 12px;
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.pin-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.pin-wrap > img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: #1a1206;
+  font: 800 .9rem/1 var(--sans);
+  box-shadow: 0 0 0 3px rgba(11, 9, 16, .9), 0 0 12px rgba(233, 196, 106, .5);
+}
+.anatomy {
+  margin: 0;
+  padding-left: 1.5em;
+  color: var(--muted);
+}
+.anatomy li { margin-bottom: 12px; }
+.anatomy strong { color: var(--gold-hi); }
+
+.steps {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(233, 196, 106, .16);
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--stone);
+  color: var(--gold-hi);
+  font: 800 1rem/1 var(--serif);
+  box-shadow: 0 0 0 1px rgba(233, 196, 106, .4);
+}
+.steps h4 {
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  color: var(--gold-hi);
+}
+.steps p { color: var(--muted); font-size: .95rem; }
+.steps .bullets { margin-top: 6px; }
+
+.bullets {
+  margin: 8px 0 0;
+  padding-left: 1.3em;
+  color: var(--muted);
+}
+.bullets li { margin-bottom: 6px; }
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 10px 0 4px;
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(233, 196, 106, .16);
+}
+.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+.data th,
+.data td {
+  padding: 10px 14px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(233, 196, 106, .12);
+}
+.data th {
+  font-family: var(--serif);
+  color: var(--gold-hi);
+  background: rgba(233, 196, 106, .06);
+}
+.data td { color: var(--muted); }
+.data td:first-child { color: var(--text); font-weight: 700; }
+.data tr:last-child td { border-bottom: 0; }
+.inline-icon {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 12px;
+  margin: 12px 0 0;
+}
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 10px;
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(233, 196, 106, .16);
+  text-align: center;
+  font-weight: 800;
+  font-size: .9rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+.swatch img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(233, 196, 106, .16);
+}
+.examples figure { margin: 0; width: 104px; text-align: center; }
+.examples figure img {
+  width: 104px;
+  height: auto;
+  border-radius: 10px;
+}
+.examples figcaption {
+  margin-top: 4px;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.examples .op {
+  font: 800 1.4rem/1 var(--serif);
+  color: var(--gold);
+}
+.example-result {
+  flex: 1 1 200px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--stone);
+  color: var(--gold-hi);
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+@media (max-width: 720px) {
+  .split { grid-template-columns: 1fr; }
+  .pin-wrap { margin: 0 auto; }
+}
 
 @media (max-width: 720px) {
   .top__inner { flex-direction: column; align-items: flex-start; }
