@@ -8489,3 +8489,4 @@ cloudx.io, miWt42tvOxZKuZF-o-x-Q, DIRECT
 #cloudX resellers
 smadex.com, 2ae8ccc7-d5be-4445-ac6e-df234e9a6a11, RESELLER
 admanmedia.com, 2447, RESELLER
+google.com, pub-6787526117120094, DIRECT, f08c47fec0942fa0
