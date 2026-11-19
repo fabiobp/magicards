@@ -24,3 +24,4 @@ google.com, pub-6787526117120094, DIRECT, f08c47fec0942fa0
 monetrix.ai, 10761, RESELLER
 spinx.biz, 1373698903, RESELLER, 9f2711e9aaa9f992
 ironsrc.com, 626621, DIRECT
+facebook.com, 1875078796816464, RESELLER, c3e20eee3f780d68
